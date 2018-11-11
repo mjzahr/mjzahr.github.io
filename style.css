@@ -1,0 +1,613 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+html {
+		font-family: 'Avenir', 'Source Sans Pro';
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    display: inline-block;
+    text-align: center;
+		overflow-x:hidden;
+    #background-image: url(./content/nd-logo.png);
+    #background-image: url(./content/img/dgperf-convsol.png);
+	}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+		background: rgba(205,201,201,1);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+		background: rgba(205,201,201,0.4);
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,0,0.4); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,255,255,0); 
+}
+
+::-webkit-scrollbar-track {
+      background-color: rgba(255,255,255,0);
+} 
+
+::-webkit-scrollbar-track-piece
+{
+	background-color: rgba(255,255,255,0);
+}
+
+body {
+	width: 100vw;	
+	background: white;
+	#background: transparent;
+  font: normal 15px "Trebuchet MS", Helvetica, sans-serif;
+	padding-bottom: 8px;
+	margin: 0;
+}
+
+table#tlayout {
+    border: none;
+    border-collapse: separate;
+    background: white;
+    #background: transparent;
+		height:10vh;
+}
+
+#project-thumb {
+  padding-top: 0.5em;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: none;
+	width: 100vw;	
+  background: white;
+  #background: transparent;
+  text-align: center;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+#layout-menu {
+	background: #ffffff;
+	padding-top: 0.5em;
+	padding-left: 8px;
+	padding-right: 8px;
+	font-size: 100%;
+	min-width: 10vw;
+	max-width: 20vw;
+	white-space: nowrap;
+  text-align: left;
+  vertical-align: top;
+	border-right: 1px solid #dddddd;
+	border-top: 0px solid #dddddd;
+	border-left: 0px solid #dddddd;
+	border-bottom: 0px solid #dddddd;
+	height:90vh;
+  background: white;
+  #background: transparent;
+}
+
+#layout-menu td {
+	vertical-align: top;
+}
+
+#layout-content {
+	padding-top: 0.5em;
+	padding-left: 8px;
+	padding-right: 8px;
+  border: none;
+	max-width:800px;
+	min-width:400px;
+  background: white;
+  #background: transparent;
+  text-align: left;
+  vertical-align: top;
+	overflow: hidden;
+	height:90vh;
+	min-height: 500px;
+}
+
+#center {margin:0 auto 0 auto; text-align: center; }
+#layout-content div.imgdivcntr {display: inline-block; padding: 10px 10px 10px 10px; font: normal 13px "Trebuchet MS", Helvetica, sans-serif; text-align: center; vertical-align: middle; white-space: nowrap; margin-left: auto; margin-right: auto; }
+#layout-content div.imgdivcntr img{display: inline-block; margin: 0px 5px 10px 5px; vertical-align: middle; }
+#layout-content div.imgdivcntr video{display: inline-block; margin: 0px 5px 10px 5px; vertical-align: middle; }
+#layout-content div.imgdivcntr p{white-space: normal; }
+
+#layout-content div.banner{
+  padding:5px;
+  margin:0px;
+}
+
+#layout-content div.banner h1{
+  font-weight: bold;
+  border:none;
+  padding:5px;
+  margin:0px;
+}
+
+#layout-menu a {
+	line-height: 1.5em;
+	margin-left: 0.5em;
+}
+
+tt {
+    background: #ffffdd;
+}
+
+pre, tt {
+	font-size: 90%;
+	font-family: monaco, monospace;
+}
+
+a, a > tt {
+	color: #224b8d;
+	text-decoration: none;
+}
+
+a
+{
+	#color: #F48025;
+  #color: rgba(176,144,67,1);
+  color: #2200CC;
+	text-decoration: none;
+}
+
+a:hover {
+	border-bottom: 1px gray dotted;
+}
+
+#layout-menu a.current:link, #layout-menu a.current:visited {
+	color: rgba(176,144,67,1);
+  #color: #2200CC;
+	border-bottom: 1px gray solid;
+}
+#layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
+	color: rgba(176,144,67,1);
+  #color: #2200CC;
+	text-decoration: none;
+}
+#layout-menu a:hover {
+	text-decoration: none;
+}
+
+div.menu-category {
+	border-bottom: 1px solid gray;
+	margin-top: 0.8em;
+	padding-top: 0.2em;
+	padding-bottom: 0.1em;
+}
+
+div.menu-item {
+	padding-left: 16px;
+	text-indent: -16px;
+}
+
+div#toptitle {
+	padding-bottom: 0.2em;
+	margin-bottom: 1.5em;
+	border-bottom: 3px gray;
+}
+
+div#top_banner{
+	line-height: 10px;
+	padding-left:2vw;
+	#border-bottom: 0px gray;
+  border:none;
+	color: rgba(201,151,44,1);
+	background: white;
+	#background: transparent;
+	text-align:left;
+  font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#top_banner h1{
+	#border-bottom: 0px gray;
+  text-align: left;
+  border:none;
+}
+
+#nd_logo{
+	position:absolute;
+	padding-left:0px; 
+	max-width:20vw;
+	background:white;
+}
+
+
+/* Reduce space if we begin the page with a title. */
+div#toptitle + h2, div#toptitle + h3 {
+	margin-top: -0.7em;
+}
+
+div#subtitle {
+	margin-top: 0.0em;
+	margin-bottom: 0.0em;
+	padding-top: 0em;
+	padding-bottom: 0.1em;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+}
+
+h1, h2, h3 {
+	color: rgba(201,151,44,1);
+	margin-top: 0.7em;
+	margin-bottom: 0.3em;
+	padding-bottom: 0.2em;
+	line-height: 2vh;
+	padding-top: 0.1vh;
+	border-bottom: 1px solid #aaaaaa;
+	border-bottom-length: 10vw;
+}
+
+h1 {
+	font-size: 200%;
+}
+
+h2 {
+	padding-top: 0.8em;
+	font-size: 120%;
+}
+
+h2 + h3 {
+    padding-top: 0.2em;
+}
+
+h3 {
+	font-size: 110%;
+	border-bottom: none;
+}
+
+h4 {
+	font-size: 110%;
+  margin-top: 0.7em;
+  margin-bottom: 0.3em;
+  padding-bottom: 0.0em;
+  line-height: 2vh;
+  padding-top: 0.1vh;
+  border-bottom: 0px solid #aaaaaa;
+}
+
+p {
+  font-size: 95%;
+	margin-top: 0.0em;
+	margin-bottom: 0.2em;
+	padding: 0;
+	line-height: 1.3;
+  text-align: justify;
+}
+
+pre {
+	padding: 0;
+	margin: 0;
+}
+
+div#footer {
+	font-size: small;
+	border-top: 1px solid #c0c0c0;
+	padding-top: 0.1em;
+	margin-top: 4.0em;
+	color: #c0c0c0;
+}
+
+div#footer a {
+	color: #80a0b0;
+}
+
+div#footer-text {
+	float: left;
+	padding-bottom: 8px;
+}
+
+ul, ol, dl {
+	margin-top: 0.2em;
+	padding-top: 0;
+	margin-bottom: 0.8em;
+}
+
+dt {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+
+dl {
+	margin-left: 20px;
+}
+
+dd {
+	color: #222222;
+}
+
+dd > *:first-child {
+	margin-top: 0;
+}
+
+ul {
+	list-style-position: outside;
+	list-style-type: square;
+}
+
+p + ul, p + ol {
+	margin-top: -0.5em;
+}
+
+li ul, li ol {
+	margin-top: -0.3em;
+}
+
+ol {
+	list-style-position: outside;
+	list-style-type: decimal;
+}
+
+li p, dd p {
+	margin-bottom: 0.3em;
+}
+
+
+ol ol {
+	list-style-type: lower-alpha;
+}
+
+ol ol ol {
+	list-style-type: lower-roman;
+}
+
+p + div.codeblock {
+	margin-top: -0.6em;
+}
+
+div.codeblock, div.infoblock {
+	margin-right: 0%;
+	margin-top: 1.2em;
+	margin-bottom: 1.3em;
+}
+
+div.blocktitle {
+	color: #cd7b62;
+	margin-top: 1.2em;
+	margin-bottom: 0.1em;
+}
+
+div.blockcontent {
+	border: 1px solid silver;
+	padding: 0.3em 0.5em;
+}
+
+div.infoblock > div.blockcontent {
+	background: #ffffee;
+}
+
+div.blockcontent p + ul, div.blockcontent p + ol {
+	margin-top: 0.4em;
+}
+
+div.infoblock p {
+	margin-bottom: 0em;
+}
+
+div.infoblock li p, div.infoblock dd p {
+	margin-bottom: 0.5em;
+}
+
+div.infoblock p + p {
+	margin-top: 0.8em;
+}
+
+div.codeblock > div.blockcontent {
+	background: #f6f6f6;
+}
+
+span.pycommand {
+	color: #000070;
+}
+
+span.statement {
+	color: #008800;
+}
+span.builtin {
+	color: #000088;
+}
+span.special {
+	color: #990000;
+}
+span.operator {
+	color: #880000;
+}
+span.error {
+	color: #aa0000;
+}
+span.comment, span.comment > *, span.string, span.string > * {
+	color: #606060;
+}
+
+@media print {
+	#layout-menu { display: none; }
+}
+
+#fwtitle {
+	margin: 2px;
+}
+
+#fwtitle #toptitle {
+	padding-left: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+#layout-content h1:first-child, #layout-content h2:first-child, #layout-content h3:first-child {
+	margin-top: -0.7em;
+}
+
+div#toptitle h1, #layout-content div#toptitle h1 {
+	margin-bottom: 0.0em;
+	padding-bottom: 0.1em;
+	padding-top: 0;
+	margin-top: 0.5em;
+	border-bottom: none;
+}
+
+img.eq {
+	padding: 0;
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+	margin: 0;
+}
+
+img.eqwl {
+	padding-left: 2em;
+	padding-top: 0.6em;
+	padding-bottom: 0.2em;
+	margin: 0;
+}
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 2px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: center;
+    border: 1px solid gray;
+}
+
+table + table {
+    margin-top: 1em;
+}
+
+tr.heading {
+    border-bottom: 2px solid black;
+}
+
+img {
+    border: none;
+}
+
+table.imgtable, table.imgtable td {
+    border: none;
+    text-align: left;
+}
+
+#content {
+		margin-left: 0vw;		
+    width: 55vw;
+		height: 80vh;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+#replacements object{
+		margin-left: 0vw;		
+    width: 70vw;
+		height: 77vh;
+    vertical-align: top;
+    overflow: hidden;
+		font-family: 'Source Sans Pro';
+}
+
+#menu_bar {
+	text-align:center;
+	width:100%;
+	height:0px;
+	
+}
+
+
+#menu_bar a{
+	display: inline-block;
+	text-align:center;
+	width:16%;
+	overflow: hidden;
+	background-color:white;
+	text-transform: uppercase;
+}
+
+#profile {
+	text-align:center;
+	width:'20vw';
+	height:'50vh';
+	overflow:'hidden';
+}
+
+.title
+{
+    text-align: center;
+		width: 100%;
+		height: 10vh;
+    vertical-align: middle;
+    overflow: hidden;
+		background-color: '#fff';
+		font-size: 200%;
+}
+
+.h1
+{
+		font-size: 200%;
+}
+.h2
+{
+		font-size: 150%;
+}
+
+.right_bar {
+		margin-left: 0vw;		
+    width: 25vw;
+		height: 80vh;
+    vertical-align: top;
+    overflow: hidden;
+		border-radius:10px;
+}
+
+.news {
+		text-align: left;
+		width:20vw;
+		height:80vh;
+    vertical-align: top;
+		margin-left: 0;		
+    overflow: hidden;
+		margin-top:0px;
+		padding-top:0px;
+}
+
+.news h3{
+	margin:0px;
+	padding:0px;
+}
+
+.footer {
+		text-align: center;
+		width:100vw;
+		margin-left: 0vw;		
+    vertical-align: center;
+    overflow: hidden;
+		border-radius:10px;
+}
+
+
+object {
+	width:100%;
+}
