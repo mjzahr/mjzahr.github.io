@@ -1,0 +1,97 @@
+\documentclass[10pt]{article}
+
+% Packages
+\usepackage{amssymb,amsmath,amsfonts,amsthm,mathtools}
+\usepackage{paralist}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[explicit]{titlesec}
+
+% Set up the header and footer
+\pagestyle{fancy}
+\chead{\large\textbf{Statement of Authorship}}
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+% Modify section, subsection styles
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection}{}{\underline{#1}}
+\titlespacing*{\section}{0pt}{8pt}{2pt}
+\titleformat{\subsection}{\normalfont\normalsize\sc}{\thesubsection}{}{#1}
+\titlespacing*{\subsection}{0pt}{8pt}{2pt}
+
+\begin{document}
+
+All persons who meet authorship criteria as defined in
+[McNutt et al., PNAS, Feb 2018, 201715374; DOI: 10.1073/pnas.1715374115]
+are listed as authors, and all authors certify that they have participated
+sufficiently in the work to take public responsibility for the content,
+including participation in the concept, design, analysis, writing, or
+revision of the manuscript. 
+
+All persons who have made substantial contributions to the work reported
+in the manuscript (e.g., technical help, writing and editing assistance,
+general support), but who do not meet the criteria for authorship, are named
+in the Acknowledgements and have given written permission to be
+named. If an Acknowledgements is not included, it indicates no substantial
+contribution from non-authors was received.
+
+\bigskip
+
+\begin{center}
+ \textbf{Manuscript title}
+ % TODO: The title of the manuscript goes here!
+\end{center}
+
+\section*{Author contributions: overview}
+% TODO: Indicate the specific contributions made by each author
+%       (list the author's initials, e.g., MJZ).
+\vspace{1mm}
+\begin{center}
+ \begin{tabular}{l|l}
+  \textit{Conception or design of the work} & \\\hline
+  % TODO: Add initials
+  \textit{Acquisition, analysis, or interpretation of data} & \\\hline
+  % TODO: Add initials
+  \textit{Creation of new software} & \\\hline
+  % TODO: Add initials
+  \textit{Draft manuscript} & \\\hline
+  % TODO: Add initials
+  \textit{Critically revise manuscript} &
+  % TODO: Add initials
+ \end{tabular}
+\end{center}
+
+\section*{Author contribution: Author 1}
+% TODO: Add description of author's specific contributions
+
+\section*{Author contribution: Author 2}
+% TODO: Add description of author's specific contributions
+
+\section*{Author contribution: Author 3}
+% TODO: Add description of author's specific contributions
+
+\section*{Authorship agreement}
+By signing this document, every author agrees the contributions of each
+individual, not just their own, are accurately documented. In addition, you
+have approved the submitted version of the manuscript, agree to be personally
+accountable for your own contributions, and agree to ensure that questions
+related to the accuracy or integretity of any part of the work are
+appropriately investigated and resolved.
+
+\bigskip
+
+% TODO: Add name of each author and sign
+%       (either electronically or print/sign/scan)
+\begin{itemize}[]
+ \setlength\itemsep{3mm}
+ \item \today, ~~ Author 1
+ \item \today, ~~ Author 2
+ \item \today, ~~ Author 3
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111428500-1"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'UA-111428500-1');
+ </script>
+  <title>Matthew J. Zahr</title>
+  <link rel="icon" href="./content/nd-logo.png" />
+  <link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Homepage of Matthew J. Zahr, Assistant Professor, University of Notre Dame, Department of Aerospace and Mechanical Engineering." />
+  <meta name="keywords" content="Matthew Zahr, LBL, LBNL, Berkeley, Stanford, Notre Dame, applied, mathematics, discontinuous, galerkin, numerical, analysis, computational, science, engineering, simulation, computational, fluid, dynamics, model, reduction, optimization, pde, topology, adjoint" />
+  <meta name="author" content="Matthew J. Zahr" />
+</head>
+  <body>
+    <table id="tlayout" summary="Table for page layout">
+      <tr valign="top">
+        <td id="layout-menu">
+ <div id="center">
+  <div class="imgdivcntr">
+   <img src="content/nd-logo.png" width="75px" alt="" title=""/>
+  </div>
+ </div>
+<div class="menu-category">About</div>
+<div class="menu-item"><a href="about-home.html">home</a></div>
+<div class="menu-item"><a href="about-openings.html">openings</a></div>
+<div class="menu-item"><a href="about-team.html">team</a></div>
+<div class="menu-category">Research</div>
+<div class="menu-item"><a href="research-projects.html">projects</a></div>
+<div class="menu-item"><a href="research-publications.html">publications</a></div>
+<div class="menu-item"><a href="research-resources.html">resources</a></div>
+<!--<div class="menu-item"><a href="research-seminars.html">seminars</a></div>-->
+<div class="menu-item"><a href="research-software.html" class="current">software</a></div>
+<div class="menu-item"><a href="research-talks.html">talks</a></div>
+<div class="menu-category">Teaching</div>
+<div class="menu-item"><a href="teach-nd.html">notre dame</a></div>
+<div class="menu-item"><a href="teach-stanford.html">stanford</a></div>
+</td>
+        <td id="layout-content">
+          <div class="banner">
+ <!--<h1>Zahr Research Group</h1>-->
+ <h1>Computational Mechanics and Optimization Laboratory</h1>
+</div>
+          <!--<h2>anlytc</h2>-->
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<!--<p></div></p>-->
+
+<h2>autogen</h2>
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+ <p>
+  A collection of Python utilities that provides a convenient interface to
+  MAPLE, mainly for the purpose of code generation. Strings containing
+  MAPLE expressions are built-up using Python strings and the utilities
+  provided by autogen, which are passed to MAPLE for analysis and code
+  generation. The library provides utilities for  linear algebra,
+  standard functions (Gaussian, rigid body motion, radial basis functions,
+  Fourier series, blending maps), transformation of integrals/PDEs between
+  domains, Arbitrary Lagrangian-Eulerian formulation of PDEs,
+  conservation laws (fluxes, state variables, Riemann solvers, numerical
+  fluxes, etc for Burgers' equation, the incompressible and compressible
+  Navier-Stokes equations, among others).
+  The main use of the library is to generate code for the derivatives of
+  complex expressions needed by computational mechanics software, e.g.,
+  Jacobian matrices for nonlinear solvers or derivatives needed for
+  PDE-constrained optimization.
+  <br/><br/>
+  Source code available on <a href="https://github.com">GitHub</a>.
+ </p>
+<!--<p></div></p>-->
+
+<h2>cclib</h2>
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<p>
+  A collection of C/C++ utilities used by other codes in the Computational
+  Mechanics and Optimization Lab (anlytc, cplib, femlib, riemlib, spgrid).
+  Functionality includes flexible multidimensional array classes with binary
+  I/O capabilities that use same binary format as NUMPY for seamless interface
+  with Python, template classes to combine arbitrary array classes (with
+  required API) into a set of array or concatenated array, sparse and block
+  sparse matrix classes, template classes to combine arbitrary matrix classes
+  into block matrices, timing utilities, interfaces into dense and sparse
+  linear algebra software (BLAS, LAPACK, SuiteSparse), finite difference
+  utilities to conveniently check derivative implementation, a generic
+  optimization class with interfaces to commonly used optimization software
+  (SNOPT, IPOPT), a collection of nonlinear solvers for systems and least
+  squares problems, and a collection of tensor and simplex utilities useful
+  in defining polynomial basis functions and quadrature rules over such
+  elements.
+  <br/><br/>
+  Source code available on <a href="https://github.com">GitHub</a>.
+</p>
+<!--<p></div></p>-->
+
+<!--<h2>cplib</h2>-->
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<!--<p></div></p>-->
+
+<!--<h2> <a href="https://github.com">femlib</a> </h2>-->
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<!--<p></div></p>-->
+
+<h2>pylib</h2>
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<p>
+  A collection of Python utilities used by other codes in the Computational
+  Mechanics and Optimization Lab (autogen, pymortestbed, pytikz). Functionality
+  includes flexible type checking, bookkeeping/database utilities, an
+  extended string class that redefines basic operations +, -, *, /, etc
+  to perform the appropriate arithmetic operation, e.g., 'a'+'b'='a+b',
+  finite difference utilities to conveniently check derivative implementation,
+  interfaces into ImageMagick and FFMPEG, image generation and postprocessing
+  using MATPLOTLIB and Scipy, and a collection of tensor utilities.
+  <br/><br/>
+  Source code available on <a href="https://github.com">GitHub</a>.
+</p>
+<!--<p></div></p>-->
+
+<!--<h2>pymortestbed</h2>-->
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<!--<p></div></p>-->
+
+<h2>pytikz</h2>
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<p>
+  A collection of Python classes and utilities to conveniently create
+  TikZ and PGFPlots files for incorporation in LaTeX documents. This
+  package allows the user to harness the power of Python to create
+  sophisticated TikZ/PGFPlots images without needed to know the fine
+  details of programatic TikZ/PGFPlots.
+  <br/><br/>
+  Source code available on <a href="https://github.com">GitHub</a>.
+</p>
+<!--<p></div></p>-->
+
+<!--<h2>riemlib</h2>-->
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<!--<p></div></p>-->
+
+<!--<h2>spgrid</h2>-->
+<!--<p><div style="max-height:30vh; overflow:scroll;"></p>-->
+<!--<p></div></p>-->
+        </td>
+      </tr>
+    </table>
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-49200719-4', 'auto');
+ga('send', 'pageview');
+</script>
+  </body>
+</html>

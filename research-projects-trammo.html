@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111428500-1"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'UA-111428500-1');
+ </script>
+  <title>Matthew J. Zahr</title>
+  <link rel="icon" href="./content/nd-logo.png" />
+  <link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Homepage of Matthew J. Zahr, Assistant Professor, University of Notre Dame, Department of Aerospace and Mechanical Engineering." />
+  <meta name="keywords" content="Matthew Zahr, LBL, LBNL, Berkeley, Stanford, Notre Dame, applied, mathematics, discontinuous, galerkin, numerical, analysis, computational, science, engineering, simulation, computational, fluid, dynamics, model, reduction, optimization, pde, topology, adjoint" />
+  <meta name="author" content="Matthew J. Zahr" />
+</head>
+  <body>
+    <table id="tlayout" summary="Table for page layout">
+      <tr valign="top">
+        <td id="layout-menu">
+ <div id="center">
+  <div class="imgdivcntr">
+   <img src="content/nd-logo.png" width="75px" alt="" title=""/>
+  </div>
+ </div>
+<div class="menu-category">About</div>
+<div class="menu-item"><a href="about-home.html">home</a></div>
+<div class="menu-item"><a href="about-openings.html">openings</a></div>
+<div class="menu-item"><a href="about-team.html">team</a></div>
+<div class="menu-category">Research</div>
+<div class="menu-item"><a href="research-projects.html" class="current">projects</a></div>
+<div class="menu-item"><a href="research-publications.html">publications</a></div>
+<div class="menu-item"><a href="research-resources.html">resources</a></div>
+<!--<div class="menu-item"><a href="research-seminars.html">seminars</a></div>-->
+<div class="menu-item"><a href="research-software.html">software</a></div>
+<div class="menu-item"><a href="research-talks.html">talks</a></div>
+<div class="menu-category">Teaching</div>
+<div class="menu-item"><a href="teach-nd.html">notre dame</a></div>
+<div class="menu-item"><a href="teach-stanford.html">stanford</a></div>
+</td>
+        <td id="layout-content">
+          <div class="banner">
+ <!--<h1>Zahr Research Group</h1>-->
+ <h1>Computational Mechanics and Optimization Laboratory</h1>
+</div>
+          <h2>Research overview</h2>
+<table id="tlayout">
+  <tr valign="bottom">
+    <td id="project-thumb">
+      <a href="research-projects-shktrk.html">
+        <img src="content/img/shktrk-bowshk1p3M4.opt.msh.rho.png" width="120px" alt="" title=""/><br/>
+        High-order shock tracking
+      </a>
+    </td>
+    <td id="project-thumb">
+      <a href="research-projects-dgopt.html">
+        <img src="content/img/dgopt-flapmorph.png" width="180px" alt="" title=""/><br/>
+        Unsteady optimization with high-order discretizations
+      </a>
+    </td>
+    <td id="project-thumb">
+      <a href="research-projects-msrom.html">
+        <img src="content/img/msrom-micro0.png" width="180px" alt="" title=""/><br/>
+        Model reduction for multiscale problems
+      </a>
+    </td>
+  </tr>
+  <tr valign="bottom">
+    <td id="project-thumb">
+      <a href="research-projects-trammo.html">
+        <img src="content/img/trammo-crm_deformed.png" width="200px" alt="" title=""/><br/>
+        PDE-constrained optimization using adaptive reduced-order models
+      </a>
+    </td>
+    <td id="project-thumb">
+      <a href="research-projects-locrom.html">
+        <img src="content/img/locrom-ahmed-pres.png" width="200px" alt="" title=""/><br/>
+        Local model reduction
+      </a>
+    </td>
+    <td id="project-thumb">
+      <a href="research-projects-misc.html">
+        <img src="content/img/dgperf-convsol.png" width="200px" alt="" title=""/><br/>
+        Miscellaneous
+      </a>
+    </td>
+  </tr>
+</table>
+<hr/>
+
+<!--
+<div id="content" style="height:460px; margin:0">
+  <div class="table">
+    <div class="row">
+
+      <div class="col" style="margin-left:5px; margin-right:5px;">
+        <div class="cell" style="width: 230px;">
+          <a href="research-projects-shktrk.html">
+            <img src="content/img/shktrk-bowshk1p3M4.opt.msh.rho.png" width="120px" alt="" title=""/><br/>
+            High-order shock tracking
+          </a>
+        </div>
+        <div class="cell" style="width: 230px; margin:0px 25px 0px 25px;">
+          <a href="research-projects-dgopt.html">
+            <img src="content/img/dgopt-flapmorph.png" width="180px" alt="" title=""/><br/>
+            Unsteady optimization with high-order discretizations
+          </a>
+        </div>
+        <div class="cell" style="width: 230px">
+          <a href="research-projects-msrom.html">
+            <img src="content/img/msrom-micro0.png" width="180px" alt="" title=""/><br/>
+            Model reduction for multiscale problems
+          </a>
+        </div>
+      </div>
+
+      <div class="col" style="margin-left:5px; margin-right:5px;">
+        <div class="cell" style="width: 230px; margin: 0px 25px 0px 25px;">
+          <a href="research-projects-trammo.html">
+            <img src="content/img/trammo-crm_deformed.png" width="200px" alt="" title=""/><br/>
+            PDE-constrained optimization using adaptive reduced-order models
+          </a>
+        </div>
+        <div class="cell" style="width: 230px">
+          <a href="research-projects-locrom.html">
+            <img src="content/img/locrom-ahmed-pres.png" width="200px" alt="" title=""/><br/>
+            Local model reduction
+          </a>
+        </div>
+        <div class="cell" style="width: 230px">
+          <a href="research-projects-misc.html">
+            <img src="content/img/dgperf-convsol.png" width="200px" alt="" title=""/><br/>
+            Miscellaneous
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+-->
+          <h3>PDE-constrained optimization using adaptive reduced-order models</h3>
+An adaptive approach to using reduced-order models as surrogates in PDE-constrained optimization is introduced that breaks the traditional offline-online framework of model order reduction. A sequence of optimization problems constrained by a given Reduced-Order Model (ROM) is defined with the goal of converging to the solution of a given PDE-constrained optimization problem. For each reduced optimization problem, the constraining ROM is trained from sampling the High-Dimensional Model (HDM) at the solution of previous problems in the sequence. The reduced optimization problems are equipped with a nonlinear trust-region based on a residual error indicator to keep the optimization trajectory in a region of the parameter space where the ROM is accurate.
+
+<div id="center">
+ <div class="imgdivcntr">
+  <div class="imgdivcntr">
+   <img src="content/img/trammo-adapt-schematic.png" width="350px" alt="" title=""/><br/><br/>
+   <img src="content/img/trammo-adapt-timeline.png" width="350px" alt="" title=""/>
+  </div>
+  <img src="content/img/trammo-adapt-muspace.png" width="240px" alt="" title=""/>
+ <p>Adaptive model reduction framework for PDE-constrained optimization
+    globalized with trust regions. <i>Top left</i>: Flow chart,
+    <i>bottom left</i>: breakdown of computational time, and <i>right</i>:
+    parameter space.</p>
+ </div>
+</div>
+
+<div id="center">
+ <div class="imgdivcntr">
+  <img src="content/img/trammo-naca-opt.png" width="200px" alt="" title=""/>
+  <img src="content/img/trammo-cp-shape-cmpr.png" width="220px" alt="" title=""/>
+  <img src="content/img/trammo-naca-hdmobj-vs-romobj.png" width="220px" alt="" title=""/>
+ <p>Aerodynamic shape optimization with ROM optimization framework: 2D
+    airfoil. <i>Left</i>: optimal/target configuration (RAE2822),
+    <i>center</i>: shape and pressure coefficient distribution,
+    and <i>right</i>: convergence history.</p>
+ </div>
+</div>
+
+A methodology is proposed for incorporating reduced-order models in a nonlinear topology optimization framework, which reduces the time required to obtain a topologically optimal structural design. The approach constructs two low-dimensional bases: one to reduce the dimension of the structural displacements and governing equations, and one to reduce the dimension of the parameter space, i.e. element volume fractions. The displacement basis is constructed adaptively during the reduced optimization problem to ensure accuracy is maintained along the optimization trajectory. The parameter basis is constructed apriori by lumping elements into macro-elements. As the reduced optimal solution will not coincide with the optimal topology, in general, the reduced optimal solution is used to warm-start a standard topology optimization method. Compared to a popular topology optimization method, without reduction or warm-starting, the proposed method achieves an order of magnitude speedup when applied to compliance minimization of a 2D cantilever and 3D trestle.
+
+<div id="center">
+ <div class="imgdivcntr">
+<img src="content/img/trammo-cantilever-hdm-opt.png" width="210px" alt="" title=""/>
+<img src="content/img/trammo-cantilever-rom-opt.png" width="210px" alt="" title=""/>
+<img src="content/img/trammo-cantilever-hdm-intermed.png" width="210px" alt="" title=""/>
+ <p>2D cantilever: compliance minimization. <i>Left</i>: optimal solution,
+    <i>center</i>: solution using ROM framework (N seconds),
+    <i>right</i>: olution using HDM after N seconds.</p>
+ </div>
+</div>
+
+<div id="center">
+ <div class="imgdivcntr">
+<img src="content/img/trammo-trestle-hdm-opt.png" width="210px" alt="" title=""/>
+<img src="content/img/trammo-trestle-rom-opt.png" width="210px" alt="" title=""/>
+<img src="content/img/trammo-trestle-hdm-intermed.png" width="210px" alt="" title=""/>
+ <p>3D trestle: compliance minimization. <i>Left</i>: optimal solution,
+    <i>center</i>: solution using ROM framework (N seconds),
+    <i>right</i>: solution using HDM after N seconds.</p>
+ </div>
+</div>
+
+<h4>Journal papers</h4>
+<ul>
+  <li>
+  <p><a name="zahr2018adaptive"></a>
+  
+  M.&nbsp;J. Zahr, K.&nbsp;Carlberg, and D.&nbsp;P. Kouri, &ldquo;Adaptive stochastic collocation for
+    PDE-constrained optimization under uncertainty using sparse grids and model
+    reduction,&rdquo; <em>SIAM Journal on Uncertainty Quantification</em>, in review
+    2018.
+  [&nbsp;<a href="content/bib/zahr2018adaptive_bib.html#zahr2018adaptive">bib</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2015progressive"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Progressive construction of a parametric
+    reduced-order model for PDE-constrained optimization,&rdquo; <em>International
+    Journal for Numerical Methods in Engineering</em>, vol.&nbsp;102, no.&nbsp;5,
+    pp.&nbsp;1111--1135, 2015.
+  [&nbsp;<a href="content/bib/zahr2015progressive_bib.html#zahr2015progressive">bib</a>&nbsp;| 
+  <a href="http://dx.doi.org/10.1002/nme.4770">DOI</a>&nbsp;| 
+  <a href="https://arxiv.org/abs/1407.7618">arxiv</a>&nbsp;| 
+  <a href="http://onlinelibrary.wiley.com/doi/10.1002/nme.4770/abstract?userIsAuthenticated=false&amp;deniedAccessCustomisedMessage=">link</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="amsallem2014design"></a>
+  
+  D.&nbsp;Amsallem, M.&nbsp;J. Zahr, Y.&nbsp;Choi, and C.&nbsp;Farhat, &ldquo;Design optimization using
+    hyper-reduced-order models,&rdquo; <em>Structural and Multidisciplinary
+    Optimization</em>, pp.&nbsp;1--22, 2014.
+  [&nbsp;<a href="content/bib/amsallem2014design_bib.html#amsallem2014design">bib</a>&nbsp;| 
+  <a href="http://dx.doi.org/10.1007/s00158-014-1183-y">DOI</a>&nbsp;| 
+  <a href="http://link.springer.com/article/10.1007/s00158-014-1183-y">link</a>&nbsp;]
+  </p>  </li>
+</ul>
+<h4>Conference papers</h4>
+<ul>
+  <li>
+  <p><a name="zahr2013construction"></a>
+  
+  M.&nbsp;J. Zahr, D.&nbsp;Amsallem, and C.&nbsp;Farhat, &ldquo;Construction of parametrically-robust
+    CFD-based reduced-order models for PDE-constrained optimization,&rdquo; in
+    <em>Proc. of the 21st AIAA Computational Fluid Dynamics Conference</em>,
+    vol.&nbsp;AIAA-2013-2685, American Institute of Aeronautics and Astronautics,
+    6/24/2013 -- 6/27/2013.
+  [&nbsp;<a href="content/bib/zahr2013construction_bib.html#zahr2013construction">bib</a>&nbsp;| 
+  <a href="http://arc.aiaa.org/doi/abs/10.2514/6.2013-2845">link</a>&nbsp;| 
+  <a href="content/papers/zahr2013construction.pdf">paper</a>&nbsp;]
+  </p>  </li>
+</ul>
+<h4>Talks</h4>
+<ul>
+  <li>
+  <p><a name="zahr2018siamuq"></a>
+  
+  M.&nbsp;J. Zahr, K.&nbsp;Carlberg, and D.&nbsp;P. Kouri, &ldquo;Efficient PDE-constrained
+    optimization under uncertainty using adaptive model reduction and sparse
+    grids,&rdquo; in <em>SIAM Conference on Uncertainty Quantification</em>, (Garden
+    Grove, California), 4/16/2018 -- 4/19/2018.
+  [&nbsp;<a href="content/bib/zahr2018siamuq_bib.html#zahr2018siamuq">bib</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017wcrw"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Efficient PDE-constrained optimization under uncertainty using
+    adaptive model reduction and sparse grids,&rdquo; in <em>2017 West Coast ROM
+    Workshop</em>, (Berkeley, California), Lawrence Berkeley National Laboratory,
+    11/17/2017.
+  [&nbsp;<a href="content/bib/zahr2017wcrw_bib.html#zahr2017wcrw">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2017wcrw.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017lbl"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Optimization-based computational physics and high-order methods:
+    from optimized analysis to design and data assimilation,&rdquo; in <em>LBNL CRD
+    Postdoc Seminar Series</em>, (Berkeley, California), Lawrence Berkeley National
+    Laboratory, 9/18/2017.
+  [&nbsp;<a href="content/bib/zahr2017lbl_bib.html#zahr2017lbl">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2017lbl.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017siamcse"></a>
+  
+  M.&nbsp;J. Zahr, K.&nbsp;Carlberg, and D.&nbsp;P. Kouri, &ldquo;Efficient PDE-constrained
+    optimization under uncertainty using adaptive model reduction and sparse
+    grids,&rdquo; in <em>SIAM Conference on Computational Science and Engineering</em>,
+    (Atlanta, Georgia), 2/27/2017 -- 3/3/2017.
+  [&nbsp;<a href="content/bib/zahr2017siamcse_bib.html#zahr2017siamcse">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2017siamcse.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017birs"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Efficient PDE-constrained optimization under uncertainty using
+    adaptive model reduction and sparse grids,&rdquo; in <em>BIRS Workshop:
+    Data-Driven Methods for ROMs and Stochastic PDEs</em>, (Banff, Alberta, Canada),
+    Banff International Reseach Station, 1/30/2017 -- 2/3/2017.
+  [&nbsp;<a href="content/bib/zahr2017birs_bib.html#zahr2017birs">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2017birs.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017frg"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Adaptive model reduction to accelerate optimization problems
+    governed by partial differential equations,&rdquo; in <em>Farhat Research Group
+    Seminar</em>, (Stanford, California), Stanford University, 1/10/2017.
+  [&nbsp;<a href="content/bib/zahr2017frg_bib.html#zahr2017frg">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2017frg.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017lblpostdoc"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Adaptive model reduction to accelerate optimization problems
+    governed by partial differential equations,&rdquo; in <em>LBNL Postdoc Seminar
+    Series</em>, (Berkeley, California), Lawrence Berkeley National Laboratory,
+    1/9/2017.
+  [&nbsp;<a href="content/bib/zahr2017lblpostdoc_bib.html#zahr2017lblpostdoc">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2017lblpostdoc.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016defense"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Adaptive model reduction to accelerate optimization problems
+    governed by partial differential equations,&rdquo; in <em>Thesis Defense</em>,
+    (Stanford, California), Stanford University, 8/3/2016.
+  [&nbsp;<a href="content/bib/zahr2016defense_bib.html#zahr2016defense">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2016defense.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016siamannual"></a>
+  
+  M.&nbsp;J. Zahr, K.&nbsp;Carlberg, and D.&nbsp;P. Kouri, &ldquo;Efficient PDE-constrained
+    optimization under uncertainty using adaptive model reduction and sparse
+    grids,&rdquo; in <em>SIAM Annual Meeting</em>, (Boston, Massachusetts), 7/11/2016 --
+    7/15/2016.
+  [&nbsp;<a href="content/bib/zahr2016siamannual_bib.html#zahr2016siamannual">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2016siamannual.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016stanford"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Efficient PDE-constrained optimization under uncertainty using
+    adaptive model reduction and sparse grids,&rdquo; in <em>CME 500 Seminar</em>,
+    (Stanford, California), Stanford University, 4/11/2016.
+  [&nbsp;<a href="content/bib/zahr2016stanford_bib.html#zahr2016stanford">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2017stanford.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016siamuq"></a>
+  
+  M.&nbsp;J. Zahr, K.&nbsp;Carlberg, and D.&nbsp;P. Kouri, &ldquo;Adaptive stochastic collocation for
+    PDE-constrained optimization under uncertainty using sparse grids and model
+    reduction,&rdquo; in <em>SIAM Conference on Uncertainty Quantification</em>,
+    (Lausanne, Switzerland), Ecole Polytechnique Federale de Lausanne, 4/5/2016
+    -- 4/8/2016.
+  [&nbsp;<a href="content/bib/zahr2016siamuq_bib.html#zahr2016siamuq">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2016siamuq.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016nd"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Accelerating PDE-constrained optimization problems using
+    adaptive reduced-order models,&rdquo; in <em>University of Notre Dame Aerospace
+    and Mechanical Engineering Seminar (Host: Gretar Tryggvason)</em>, (South Bend,
+    Indiana), University of Notre Dame, 3/3/2016 -- 3/4/2016.
+  [&nbsp;<a href="content/bib/zahr2016nd_bib.html#zahr2016nd">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2016nd.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016usc"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Accelerating PDE-constrained optimization problems using
+    adaptive reduced-order models,&rdquo; in <em>University of Southern California
+    Aerospace and Mechanical Engineering Seminar (Host: Geoff Spedding)</em>, (Los
+    Angeles, California), University of Southern California, 2/25/2016 --
+    2/26/2017.
+  [&nbsp;<a href="content/bib/zahr2016usc_bib.html#zahr2016usc">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2016usc.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016alvarez"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Accelerating PDE-constrained optimization problems using
+    adaptive reduced-order models,&rdquo; in <em>Luis W. Alvarez Fellowship Seminar
+    (Host: Jonathan Carter)</em>, (Berkeley, California), Lawrence Berkeley National
+    Laboratory, 2/9/2016.
+  [&nbsp;<a href="content/bib/zahr2016alvarez_bib.html#zahr2016alvarez">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2016alvarez.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016wilkinson"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Accelerating PDE-constrained optimization problems using
+    adaptive reduced-order models,&rdquo; in <em>J. H. Wilkinson Fellowship Seminar
+    (Host: Sven Leyffer)</em>, (Argonne, Illinois), Argonne National Laboratory,
+    1/15/2016.
+  [&nbsp;<a href="content/bib/zahr2016wilkinson_bib.html#zahr2016wilkinson">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2016wilkinson.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016jvn"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Accelerating PDE-constrained optimization problems using
+    adaptive reduced-order models,&rdquo; in <em>John von Neumann Postdoctoral
+    Fellowship Seminar (Host: Denis Ridzal)</em>, (Albuquerque, New Mexico), Sandia
+    National Laboratories, 1/11/2016.
+  [&nbsp;<a href="content/bib/zahr2016jvn_bib.html#zahr2016jvn">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2016jvn.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2015fernbach"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Accelerating PDE-constrained optimization problems using
+    adaptive reduced-order models,&rdquo; in <em>Sidney Fernbach Postdoctoral
+    Fellowship Seminar (Host: Jeffrey A. F. Hittinger)</em>, (Livermore, California),
+    Lawrence Livermore National Laboratory, 12/9/2015.
+  [&nbsp;<a href="content/bib/zahr2015fernbach_bib.html#zahr2015fernbach">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2015fernbach.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2015frg"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;High-order methods for optimization and control of conservation
+    laws on deforming domains,&rdquo; in <em>Farhat Research Group Seminar</em>,
+    (Stanford, California), Stanford University, 12/8/2015.
+  [&nbsp;<a href="content/bib/zahr2015frg_bib.html#zahr2015frg">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2015frg.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2015wcrw"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;A nonlinear trust-region framework for
+    PDE-constrained optimization using adaptive model reduction,&rdquo; in <em>West
+    Coast ROM Workshop</em>, (Livermore, California), Sandia National Laboratories,
+    11/19/2015.
+  [&nbsp;<a href="content/bib/zahr2015wcrw_bib.html#zahr2015wcrw">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2015wcrw.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2015sandia-abq"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Accelerating PDE-constrained optimization using
+    adaptive reduced-order models,&rdquo; in <em>Seminar at Sandia National
+    Laboratories (Host: Drew Kouri)</em>, (Albuquerque, New Mexico), 7/8/2015.
+  [&nbsp;<a href="content/bib/zahr2015sandia-abq_bib.html#zahr2015sandia-abq">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2015sandia-abq.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2015melosh"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Accelerating PDE-constrained optimization using adaptive
+    reduced-order models: application to topology optimization,&rdquo; in <em>Robert
+    J. Melosh Medal Competition</em>, (Durham, North Carolina), Duke University,
+    4/24/2015.
+  [&nbsp;<a href="content/bib/zahr2015melosh_bib.html#zahr2015melosh">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2015melosh.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2015siamcse"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;A nonlinear trust-region framework for
+    PDE-constrained optimization using progressively constructed reduced-order
+    models,&rdquo; in <em>2015 SIAM Conference on Computational Science and
+    Engineering (CSE15)</em>, (Salt Lake City, Utah), 3/14/2015 -- 3/18/2015.
+  [&nbsp;<a href="content/bib/zahr2015siamcse_bib.html#zahr2015siamcse">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2015siamcse.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2014sandia"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Accelerating PDE-constrained optimization using
+    progressively constructed reduced-order models,&rdquo; in <em>Bay Area ROM
+    Workshop</em>, (Livermore, California), Sandia National Laboratories, 8/8/2014.
+  [&nbsp;<a href="content/bib/zahr2014sandia_bib.html#zahr2014sandia">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2014sandia.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2014wccm"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;PDE-constrained optimization using progressively
+    constructed reduced-order models,&rdquo; in <em>World Congress on Computational
+    Mechanics XI (WCCM XI)</em>, (Barcelona, Spain), 7/20/2014 -- 7/25/2014.
+  [&nbsp;<a href="content/bib/zahr2014wccm_bib.html#zahr2014wccm">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2014wccm.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2014usnctam"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Rapid nonlinear topology optimization using
+    precomputed reduced-order models,&rdquo; in <em>17th US National Congress on
+    Theoretical and Applied Mechanics (USNCTAM)</em>, (East Lansing, Michigan),
+    6/15/2014 -- 6/20/2014.
+  [&nbsp;<a href="content/bib/zahr2014usnctam_bib.html#zahr2014usnctam">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2014usnctam.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2014siamopt"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;PDE-constrained optimization using hyper-reduced
+    models,&rdquo; in <em>SIAM Conference on Optimization</em>, (San Diego, California),
+    5/19/2014 -- 5/22/2014.
+  [&nbsp;<a href="content/bib/zahr2014siamopt_bib.html#zahr2014siamopt">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2014siamopt.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2013compfest"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Rapid topology optimization using reduced-order models,&rdquo; in <em>
+    2013 Berkeley/Stanford Computational Mechanics Festival (CompFest)</em>,
+    (Berkeley, California), University of California, Berkeley, 10/19/2013.
+  [&nbsp;<a href="content/bib/zahr2013compfest_bib.html#zahr2013compfest">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2013compfest.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2013usnccm"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Rapid nonlinear topology optimization using
+    reduced-order models,&rdquo; in <em>12th U.S. National Congress on Computational
+    Mechanics (USNCCM12)</em>, (Raleigh, North Carolina), 7/22/2013 -- 7/25/2013.
+  [&nbsp;<a href="content/bib/zahr2013usnccm_bib.html#zahr2013usnccm">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2013usnccm.pdf">slides</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2013aiaa1"></a>
+  
+  M.&nbsp;J. Zahr, D.&nbsp;Amsallem, and C.&nbsp;Farhat, &ldquo;Construction of parametrically robust
+    CFD-based reduced-order models for PDE-constrained optimization,&rdquo; in
+    <em>43rd AIAA Fluid Dynamics Conference and Exhibit</em>, (San Diego,
+    California), 6/24/2013 -- 6/27/2013.
+  [&nbsp;<a href="content/bib/zahr2013aiaa1_bib.html#zahr2013aiaa1">bib</a>&nbsp;| 
+  <a href="content/slides/zahr2013aiaa1.pdf">slides</a>&nbsp;| 
+  <a href="http://arc.aiaa.org/doi/abs/10.2514/6.2013-2845">link</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="amsallem2013wcsmo"></a>
+  
+  D.&nbsp;Amsallem, M.&nbsp;J. Zahr, Y.&nbsp;Choi, and C.&nbsp;Farhat, &ldquo;Design optimization using
+    hyper-reduced order models,&rdquo; in <em>10th World Congress on Structural and
+    Multidisciplinary Optimization (WCSMO10)</em>, (Orlando, Florida), 3/19/2013 --
+    3/24/2013.
+  [&nbsp;<a href="content/bib/amsallem2013wcsmo_bib.html#amsallem2013wcsmo">bib</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2013wcsmo"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Construction of parametrically robust reduced-order
+    models for PDE-constrained optimization,&rdquo; in <em>10th World Congress on
+    Structural and Multidisciplinary Optimization (WCSMO10)</em>, (Orlando, Florida),
+    3/19/2013 -- 3/24/2013.
+  [&nbsp;<a href="content/bib/zahr2013wcsmo_bib.html#zahr2013wcsmo">bib</a>&nbsp;]
+  </p>  </li>
+</ul>
+<h4>Posters</h4>
+<ul>
+  <li>
+  <p><a name="zahr2017ascr-poster"></a>
+  
+  M.&nbsp;J. Zahr and P.-O. Persson, &ldquo;Adjoint-based optimization, uncertainty
+    quantification, and data assimilation of multiphysics systems using
+    high-order numerical discretizations,&rdquo; in <em>DOE ASCR Applied Mathematics
+    PI Meeting</em>, (Washington D.C.), 9/11/2017 -- 9/12/2017.
+  [&nbsp;<a href="content/bib/zahr2017ascr-poster_bib.html#zahr2017ascr-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2017ascr-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017ima-poster"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Efficient PDE-constrained optimization using adaptive model
+    reduction,&rdquo; in <em>Institute for Mathematics and its Applications:
+    Frontiers in PDE-Constrained Optimization</em>, (Minneapolis, Minnesota),
+    6/6/2016 -- 6/10/2016.
+  [&nbsp;<a href="content/bib/zahr2017ima-poster_bib.html#zahr2017ima-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2017ima-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017icme-affiliates-poster"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Efficient PDE-constrained optimization using adaptive model
+    reduction,&rdquo; in <em>2016 Stanford Computational Mathematics and Engineering
+    Affiliates Meeting</em>, (Stanford, California), 5/1/2016.
+  [&nbsp;<a href="content/bib/zahr2017icme-affiliates-poster_bib.html#zahr2017icme-affiliates-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2017aa-affiliates-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2017aa-affiliates-poster"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;Efficient PDE-constrained optimization using adaptive model
+    reduction,&rdquo; in <em>2016 Stanford Aerospace and Astronautics Affiliates
+    Meeting</em>, (Stanford, California), 4/26/2016.
+  [&nbsp;<a href="content/bib/zahr2017aa-affiliates-poster_bib.html#zahr2017aa-affiliates-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2017aa-affiliates-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2016ahpcrc-romopt-poster"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Accelerating PDE-constrained optimization using
+    adaptive reduced-order models,&rdquo; in <em>Army High Performance Computing
+    Research Center (AHPCRC) Review Meeting</em>, (Santa Cruz, California), 1/18/2016
+    -- 1/20/2016.
+  [&nbsp;<a href="content/bib/zahr2016ahpcrc-romopt-poster_bib.html#zahr2016ahpcrc-romopt-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2016ahpcrc-romopt-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2015ahpcrc-poster"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Accelerating PDE-constrained optimization using
+    progressively-constructed reduced-order models,&rdquo; in <em>Army High
+    Performance Computing Research Center (AHPCRC) Review Meeting</em>, (Santa Cruz,
+    California), 8/10/2015 -- 8/12/2016.
+  [&nbsp;<a href="content/bib/zahr2015ahpcrc-poster_bib.html#zahr2015ahpcrc-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2015ahpcrc-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2014csgf-poster"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Progressive construction of a parametric
+    reduced-order model for PDE-constrained optimization,&rdquo; in <em>2014 DOE
+    CSGF Annual Program Review</em>, (Washington D.C.), 7/14/2014 -- 7/17/2014.
+  [&nbsp;<a href="content/bib/zahr2014csgf-poster_bib.html#zahr2014csgf-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2014progromopt-CSGF.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2014aa-affiliates-poster"></a>
+  
+  M.&nbsp;J. Zahr, &ldquo;PDE-constrained optimization using progressively constructed
+    reduced-order models,&rdquo; in <em>2014 Stanford Aerospace and Astronautics
+    Affiliates Meeting</em>, (Stanford, California), 4/28/2014.
+  [&nbsp;<a href="content/bib/zahr2014aa-affiliates-poster_bib.html#zahr2014aa-affiliates-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2014aa-affiliates-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2013csgf-poster"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Rapid topology optimization using reduced-order
+    models,&rdquo; in <em>2013 DOE CSGF Annual Program Review</em>, (Washington D.C.),
+    7/25/2013 -- 7/27/2013.
+  [&nbsp;<a href="content/bib/zahr2013csgf-poster_bib.html#zahr2013csgf-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2013usnccm-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2013usnccm-poster"></a>
+  
+  M.&nbsp;J. Zahr and C.&nbsp;Farhat, &ldquo;Rapid structural shape optimization using
+    progressively constructed reduced-order models,&rdquo; in <em>12th U.S. National
+    Congress on Computational Mechanics (USNCCM12)</em>, (Raleigh, North Carolina),
+    7/22/2013 -- 7/25/2013.
+  [&nbsp;<a href="content/bib/zahr2013usnccm-poster_bib.html#zahr2013usnccm-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2013usnccm-poster.pdf">poster</a>&nbsp;]
+  </p>  </li>
+</ul>
+        </td>
+      </tr>
+    </table>
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-49200719-4', 'auto');
+ga('send', 'pageview');
+</script>
+  </body>
+</html>
