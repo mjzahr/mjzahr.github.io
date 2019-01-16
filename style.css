@@ -482,18 +482,15 @@ img.eqwl {
 	margin: 0;
 }
 
-table {
-    border: 2px solid black;
-    border-collapse: collapse;
-}
+tr:nth-child(even) {background-color: #f2f2f2;}
 
-td {
+/*td {
     padding: 2px;
     padding-left: 0.5em;
     padding-right: 0.5em;
     text-align: center;
     border: 1px solid gray;
-}
+}*/
 
 table + table {
     margin-top: 1em;
