@@ -52,8 +52,8 @@
   <tr valign="bottom">
     <td id="project-thumb">
       <a href="research-projects-shktrk.html">
-        <img src="content/img/shktrk-bowshk1p3M4.opt.msh.rho.png" width="120px" alt="" title=""/><br/>
-        High-order shock tracking
+        <img src="content/img/sph_w_2_view1.png" width="200px" alt="" title=""/><br/>
+        High-order implicit shock tracking
       </a>
     </td>
     <td id="project-thumb">
@@ -63,23 +63,23 @@
       </a>
     </td>
     <td id="project-thumb">
-      <a href="research-projects-msrom.html">
-        <img src="content/img/msrom-micro0.png" width="180px" alt="" title=""/><br/>
-        Model reduction for multiscale problems
-      </a>
-    </td>
-  </tr>
-  <tr valign="bottom">
-    <td id="project-thumb">
       <a href="research-projects-trammo.html">
         <img src="content/img/trammo-crm_deformed.png" width="200px" alt="" title=""/><br/>
         PDE-constrained optimization using adaptive reduced-order models
       </a>
     </td>
+  </tr>
+  <tr valign="bottom">
+    <td id="project-thumb">
+      <a href="research-projects-msrom.html">
+        <img src="content/img/msrom-micro0.png" width="170px" alt="" title=""/><br/>
+        Model reduction for multiscale problems
+      </a>
+    </td>
     <td id="project-thumb">
       <a href="research-projects-locrom.html">
         <img src="content/img/locrom-ahmed-pres.png" width="200px" alt="" title=""/><br/>
-        Local model reduction
+        Model reduction methods
       </a>
     </td>
     <td id="project-thumb">
@@ -143,43 +143,117 @@
   </div>
 </div>
 -->
-          <h3>High order shock tracking</h3>
-<p>Shock waves and other types of discontinuous or shape-gradient features commonly arise in critical applications in fields such as aerospace, astrophysics, combustion, and many more. Accurate resolution of these flow fields is a longstanding difficultly in computational science/engineering and usually requires extreme anisotropic mesh refinement and a large number of degrees of freedom.</p><br/>
+          <h3>High-order implicit shock tracking</h3>
+<p>Shock waves and other types of discontinuous or shape-gradient features commonly arise in critical applications in fields such as aerospace, astrophysics, combustion, and many more. Accurate resolution of these flow fields is a longstanding difficultly in computational science/engineering and usually requires extreme anisotropic mesh refinement and a large number of degrees of freedom. We developed a novel approach to approximate solutions to nonlinear conservation laws called High-Order Implicit Shock Tracking (HOIST). The method is based on a high-order DG discretization of the governing equations and automated alignment of elements with non-smooth flow features (shocks, contact discontinuities, head/tail of rarefactions). By aligning the mesh with the non-smooth features, they are perfectly represented by the DG basis and the smooth solutions away from these features are approximated with high-order accuracy. As such, the method is free of nonlinear instabilities (oscillations) without use of limiting or artificial viscosity. The key innovation that enables automatic alignment of the grid with flow features is re-casting the geometrically complex problem of generating a mesh that aligns with an unknown discontinuity surface as an optimization problem. The method begins with a grid that is agnostic to all flow features and solves the novel optimization problem to simultaneously determine the flow solution and optimal nodal coordinates of the grid that cause element faces to align with flow features. Thus, mesh alignment with shocks happens <i>implicitly</i> through the solution of the optimization problem; the only topological mesh modification used is element removal via edge collapse, which is simple and well-defined for simplex element in any dimension.</p><br/>
+
+<p> <b>Optimal convergence rates for shocked flows.</b> The HOIST method recovers optimal (p+1) convergence rates for solutions with discontinuities, as demonstrated by flow through an area variation (quasi-1D Euler equations), whereas traditional shock capturing methods based on artificial viscosity struggle to achieve first-order convergence.</p><br/>
 
 <div class="imgdivcntr">
-  <img src="content/img/shktrk-burg1d-cnvg.png" width="550px" alt="" title=""/><br/>
-  <p>Convergence of shock tracking method applied to the steady inviscid
-     Burgers' equation with a discontinuous source term for polynomial orders
-     p = 1, p = 2, p = 3, p = 4, p = 5, p = 6. The expected convergence rates
-     of p + 1 are obtained in most cases. The slopes of the best-fit lines to
-     the data points in the asymptotic regime are: 1.95, 3.13, 3.85, 5.47,
-     4.36, and 8.67, respectively.</p>
+  <img src="content/tikz/eulernozii1_parab0_soln.png" width="370px" alt="" title=""/> &nbsp;&nbsp;
+  <img src="content/tikz/eulernozii1_parab0_hconv.png" width="370px" alt="" title=""/>
+  <p><i>Left:</i>
+     Density of flow through an area variation: exact solution (black),
+     shock capturing with 50 quartic elements (red dashed), and implicit
+     shock tracking with 10 quartic elements (yellow dotted); edges of
+     the converged shock tracking mesh are shown in vertical dotted lines.
+     <i>Right:</i>
+     Mesh convergence of the shock capturing method based on artificial
+     viscosity with p=4 elements (solid gray) and implicit shock tracking
+     with elements of degree p=1,...,5 (solid). The dashed lines indicate
+     the optimal convergence rate for each polynomial degree (p+1).</p>
 </div>
 
-<p>We developed a high-order accurate, nonlinearly stable numerical framework for solving steady conservation laws with discontinuous solution features such as shock waves. The method falls into the category of a shock tracking or r-adaptive methods and is based on the observation that numerical discretizations such as finite volume or discontinuous Galerkin methods that support discontinuities along element faces can perfectly represent discontinuities and provide appropriate stabilization through approximate Riemann solvers. The difficulty lies in aligning element faces with the unknown discontinuity. The proposed method recasts a discretized conservation law as a PDE-constrained optimization problem whose solution is a (curved) mesh that tracks the discontinuity and the solution of the discrete conservation law on this mesh. The discrete state vector and nodal positions of the high-order mesh are taken as optimization variables and the objective function is a discontinuity indicator that monotonically approaches a minimum as element faces approach the shock surface. A full space optimization solver is used to simultaneously converge the state vector and mesh to their optimal values to ensure the solution of the discrete PDE is never required on meshes that are not aligned with discontinuities.</p><br/>
+<p> <b>High accuracy per degree of freedom for flows with non-smooth features.</b> The HOIST method produces accurate solutions on extremely coarse, high-order meshes, even more so than popular fifth-order WENO methods.</p><br/>
 
 <div class="imgdivcntr">
-  <img src="content/img/shktrk-bowshk1p3M4.opt.msh.rho.png" width="220px" alt="" title=""/>
-  <img src="content/img/shktrk-bowshk1p3M4.opt.rho.png" width="220px" alt="" title=""/>
-  <p>Solution of two-dimensional Euler equations (density) with supersonic
-     inflow M = 4 using high-order shock tracking framework with a piecewise
-     polynomial basis (up to order 2) used to represent the solution and
-     geometry. The deformed mesh provided by the tracking framework is included
-     in the <i>left</i> image to show the high-quality curved elements that
-     track the shock location. The mesh is not included in the <i>right</i>
-     image to clearly show the solution features away from the shock.</p>
+  <img src="content/tikz/powers0cfg2.png" width="200px" alt="" title=""/> &nbsp;&nbsp;
+  <img src="content/img/euler2d1p0_powers0cfg2b_nref0p3_c1s1_lam_mesh.png" width="200px" alt="" title=""/> &nbsp;&nbsp;
+  <img src="content/tikz/euler2d1p0_powers0cfg2a_c1s2_hconv.png" width="300px" alt="" title=""/>
+  <p><i>Left:</i>
+     Schematic of reacting flow problem in [Powers, Aslam; 2006].
+     <i>Middle:</i>
+     HOIST solution (reaction progress) with only 100 cubic elements.
+     <i>Right:</i>
+     Mesh convergence study of fifth-order WENO finite difference
+     scheme (dashed grey +) [Powers, Aslam; 2006] and HOIST with
+     elements of degree p=1 (solid black circles), p=2 (solid red squares),
+     p=3 (solid blue pentagons).</p>
 </div>
 
-<p>The method obtains optimal p+1 convergence rates, up to polynomial order p=6, in the L1 norm for a number for a number of 1D problems. Furthermore, it requires two orders of magnitude fewer degrees of freedom for a given accuracy than competitive adaptive mesh refinement to resolve supersonic flow (Mach 4) in 2D around a rounded square, a problem from the 5th International Workshop on High-Order CFD Methods. For this problem, errors less than 0.1% were obtained with fewer than 2000 degrees of freedom.</p><br/>
+<p> <b>Automatic alignment of a generic mesh with complex shock surfaces.</b> The novel optimization formulation and solver lead to automated alignment of the mesh with complex shock/contact surfaces in two and three dimensions starting from a generic mesh (generated without knowledge of shock/contact surfaces).</p><br/>
 
 <div class="imgdivcntr">
-  <video width="200px" height="355px" controls>
-   <source src="content/mov/shktrk-bowshkp2M4.mp4" type="video/mp4">
+  <video width="780px" height="263px" controls>
+   <source src="content/mov/iburg1v1d_sptm_nrl0_stdy0_nel6p123_msh.mp4" type="video/mp4">
    Your browser does not support the video tag.
   </video>
-  <p>Convergence history of mesh and solution toward optimal values. At
-     convergence the mesh aligns with the shock and the discrete PDE
-     residual nearly zero (infinity norm = 1e-8).</p>
+  <p>Convergence history (mesh and solution) of HOIST solver for
+     space-time Burgers' equation (accelerating shock) with p=1 (<i>left</i>),
+     p=2 (<i>middle</i>), and p=3 (<i>right</i>) elements.</p>
+</div>
+
+<div class="imgdivcntr">
+  <video width="700px" height="350px" controls>
+   <source src="content/mov/iburg1v1d_sptm_shkform_nel20p3q3_msh.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+  </video>
+  <p>Convergence history (mesh and solution) of HOIST solver for
+     space-time Burgers' equation (shock formation and merge) with
+     p=3 elements. The initially smooth solution eventually forms
+     discontinuities that propagate toward one another and
+     merge; the HOIST method tracks both the shock formation and merging
+     events with the computational mesh.</p>
+</div>
+
+<div class="imgdivcntr">
+  <video width="700px" height="141px" controls>
+   <source src="content/mov/eulerii1d_sptm_sod_nref0p2q1_msh.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+  </video>
+  <p>Convergence history (mesh and solution) of HOIST solver for
+     space-time 1D Euler equations (Sod shock tube) with p=2 elements.
+     The solution possesses a generalized triple point from which the
+     shock wave, contact discontinuity, and rarefaction emanate. All
+     features, including the head and tail of the rarefaction (continuous
+     solution, discontinuity in derivative), are all tracked at convergence.</p>
+</div>
+
+<div class="imgdivcntr">
+  <video width="700px" height="211px" controls>
+   <source src="content/mov/eulerii2d_diamond0_M2nref0p2q2_msh.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+  </video>
+  <p>Convergence history (mesh and solution) of HOIST solver for
+     Mach 2 (supersonic) flow over a diamond in a tunnel with 201
+     quadratic elements.
+     The solution possesses curved and intersecting shocks, all
+     of which are tracked with the high-order mesh.</p>
+</div>
+
+<div class="imgdivcntr">
+  <video width="699px" height="306x" controls>
+   <source src="content/mov/scramjet_comb.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+  </video>
+  <p>Convergence history (mesh and solution) of HOIST solver for
+     Mach 5 (hypersonic) flow through a scramjet with 2447 quadratic
+     elements. The solution possesses shocks that reflect off boundaries,
+     intersect with one another to form triple points, and interact
+     with expansions lead to curved shocks; all these features are
+     tracked with the high-order mesh.</p>
+</div>
+
+<div class="imgdivcntr">
+  <img src="content/img/sph_init_view1.png" width="220px" alt="" title=""/>
+  <img src="content/img/sph_w_M2_view1.png" width="220px" alt="" title=""/>
+  <img src="content/img/sph_w_2_view1.png" width="220px" alt="" title=""/>
+  <!--<img src="content/img/sph_shksurf_msh_view1.png" width="200px" alt="" title=""/>-->
+  <p>The HOIST method (491 quadratic elements) applied to Mach 2 flow over a
+     sphere, including the solution and mesh used to initialize the iterations
+     (<i>left</i>), the converged solution (<i>middle</i>), and a zoom of the
+     converged solution between the bow shock and sphere surface
+     (<i>right</i>), which shows automated shock alignment of HOIST
+     works robustly in three dimensions.</p>
 </div>
 
 <h4>Journal papers</h4>
@@ -264,7 +338,8 @@
     Science and Technology Forum and Exposition (SciTech2020)</em>, (Orlando,
     Florida), American Institute of Aeronautics and Astronautics, 1/6/2020 --
     1/10/2020.
-  [&nbsp;<a href="content/bib/zahr2020radapt_bib.html#zahr2020radapt">bib</a>&nbsp;]
+  [&nbsp;<a href="content/bib/zahr2020radapt_bib.html#zahr2020radapt">bib</a>&nbsp;| 
+  <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2020-0537">link</a>&nbsp;]
   </p>  </li>
   <li>
   <p><a name="shi2019optimization"></a>
@@ -275,6 +350,7 @@
     Exposition (SciTech2019)</em>, (San Diego, California), American Institute of
     Aeronautics and Astronautics, 1/7/2019 -- 1/11/2019.
   [&nbsp;<a href="content/bib/shi2019optimization_bib.html#shi2019optimization">bib</a>&nbsp;| 
+  <a href="https://arc.aiaa.org/doi/pdf/10.2514/6.2019-1151">link</a>&nbsp;| 
   <a href="content/papers/shi2019optimization.pdf">paper</a>&nbsp;]
   </p>  </li>
   <li>
@@ -286,20 +362,12 @@
     Florida), American Institute of Aeronautics and Astronautics, 1/8/2018 --
     1/12/2018.
   [&nbsp;<a href="content/bib/zahr2018optimization_bib.html#zahr2018optimization">bib</a>&nbsp;| 
+  <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2018-0063">link</a>&nbsp;| 
   <a href="content/papers/zahr2018optimization.pdf">paper</a>&nbsp;]
   </p>  </li>
 </ul>
 <h4>Talks</h4>
 <ul>
-  <li>
-  <p><a name="zahr2020inria"></a>
-  
-  M.&nbsp;J. Zahr, &ldquo;Optimization-based model reduction and domain deformation to
-    overcome slowly decaying Kolmogorov <em>n</em>-widths,&rdquo; in <em>Reduced-order
-    models at work: industry and medicine</em>, (Bordeaux, France), Inria Bordeaux
-    (Salle Ada Lovelace), 3/18/2022 -- 3/20/2022.
-  [&nbsp;<a href="content/bib/zahr2020inria_bib.html#zahr2020inria">bib</a>&nbsp;]
-  </p>  </li>
   <li>
   <p><a name="zahr2020icosahom"></a>
   
@@ -308,6 +376,15 @@
     Conference on Spectral and High Order Methods (ICOSAHOM) 2020</em>, (Vienna,
     Austria), 7/12/2021 -- 7/16/2021.
   [&nbsp;<a href="content/bib/zahr2020icosahom_bib.html#zahr2020icosahom">bib</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="naudet2021aiaa-aviation"></a>
+  
+  C.&nbsp;Naudet and M.&nbsp;J. Zahr, &ldquo;High-order implicit shock tracking using entropy
+    variables and radial basis functions,&rdquo; in <em>Proc. of the AIAA Aviation
+    Forum and Exposition (Aviation 2021)</em>, (Washington, D.C.), American Institute
+    of Aeronautics and Astronautics, 6/7/2021 -- 6/11/2021.
+  [&nbsp;<a href="content/bib/naudet2021aiaa-aviation_bib.html#naudet2021aiaa-aviation">bib</a>&nbsp;]
   </p>  </li>
   <li>
   <p><a name="shi2021aiaa-aviation"></a>
@@ -326,15 +403,6 @@
     Forum and Exposition (Aviation 2021)</em>, (Washington, D.C.), American Institute
     of Aeronautics and Astronautics, 6/7/2021 -- 6/11/2021.
   [&nbsp;<a href="content/bib/huang2021aiaa-aviation_bib.html#huang2021aiaa-aviation">bib</a>&nbsp;]
-  </p>  </li>
-  <li>
-  <p><a name="naudet2021aiaa-aviation"></a>
-  
-  C.&nbsp;Naudet and M.&nbsp;J. Zahr, &ldquo;High-order implicit shock tracking using entropy
-    variables and radial basis functions,&rdquo; in <em>Proc. of the AIAA Aviation
-    Forum and Exposition (Aviation 2021)</em>, (Washington, D.C.), American Institute
-    of Aeronautics and Astronautics, 6/7/2021 -- 6/11/2021.
-  [&nbsp;<a href="content/bib/naudet2021aiaa-aviation_bib.html#naudet2021aiaa-aviation">bib</a>&nbsp;]
   </p>  </li>
   <li>
   <p><a name="zahr2021nd"></a>
@@ -381,15 +449,6 @@
     <em>Data Sciences Seminar, Johns Hopkins University</em>, (Baltimore, Maryland),
     Johns Hopkins University, 12/4/2019.
   [&nbsp;<a href="content/bib/zahr2019jhu_bib.html#zahr2019jhu">bib</a>&nbsp;]
-  </p>  </li>
-  <li>
-  <p><a name="zahr2019usnccm-b"></a>
-  
-  M.&nbsp;J. Zahr, &ldquo;An optimization-based approach for the reduction of conservation
-    laws with parametrized discontinuities,&rdquo; in <em>15th U.S. National Congress
-    on Computational Mechanics (USNCCM15)</em>, (Austin, Texas), 7/28/2019 --
-    8/2/2019.
-  [&nbsp;<a href="content/bib/zahr2019usnccm-b_bib.html#zahr2019usnccm-b">bib</a>&nbsp;]
   </p>  </li>
   <li>
   <p><a name="zahr2019usnccm-a"></a>
@@ -482,15 +541,6 @@
   [&nbsp;<a href="content/bib/zahr2018vt_bib.html#zahr2018vt">bib</a>&nbsp;]
   </p>  </li>
   <li>
-  <p><a name="zahr2018how"></a>
-  
-  M.&nbsp;J. Zahr and P.-O. Persson, &ldquo;An optimization-based discontinuous Galerkin
-    approach for high-order accurate shock tracking,&rdquo; in <em>5th International
-    Workshop on High-Order CFD Methods</em>, (Kissimmee, Florida), 1/8/2018 --
-    1/12/2018.
-  [&nbsp;<a href="content/bib/zahr2018how_bib.html#zahr2018how">bib</a>&nbsp;]
-  </p>  </li>
-  <li>
   <p><a name="zahr2018aiaa"></a>
   
   M.&nbsp;J. Zahr and P.-O. Persson, &ldquo;An optimization-based discontinuous Galerkin
@@ -498,6 +548,15 @@
     Technology Forum and Exposition (SciTech2018)</em>, (Kissimmee, Florida),
     American Institute of Aeronautics and Astronautics, 1/8/2018 -- 1/12/2018.
   [&nbsp;<a href="content/bib/zahr2018aiaa_bib.html#zahr2018aiaa">bib</a>&nbsp;]
+  </p>  </li>
+  <li>
+  <p><a name="zahr2018how"></a>
+  
+  M.&nbsp;J. Zahr and P.-O. Persson, &ldquo;An optimization-based discontinuous Galerkin
+    approach for high-order accurate shock tracking,&rdquo; in <em>5th International
+    Workshop on High-Order CFD Methods</em>, (Kissimmee, Florida), 1/8/2018 --
+    1/12/2018.
+  [&nbsp;<a href="content/bib/zahr2018how_bib.html#zahr2018how">bib</a>&nbsp;]
   </p>  </li>
   <li>
   <p><a name="zahr2017lbl"></a>
@@ -518,7 +577,8 @@
   T.&nbsp;Huang, C.&nbsp;Naudet, and M.&nbsp;J. Zahr, &ldquo;High-order implicit shock tracking for
     high-speed flows,&rdquo; in <em>SIAM Conference on Computational Science and
     Engineering</em>, (Fort Worth, Texas), 3/1/2021 -- 3/5/2021.
-  [&nbsp;<a href="content/bib/zahr2021siamcse-poster_bib.html#zahr2021siamcse-poster">bib</a>&nbsp;]
+  [&nbsp;<a href="content/bib/zahr2021siamcse-poster_bib.html#zahr2021siamcse-poster">bib</a>&nbsp;| 
+  <a href="content/posters/zahr2021siamcse-poster.pdf">poster</a>&nbsp;]
   </p>  </li>
   <li>
   <p><a name="zahr2018lbnl-poster"></a>

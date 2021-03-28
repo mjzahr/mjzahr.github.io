@@ -52,8 +52,8 @@
   <tr valign="bottom">
     <td id="project-thumb">
       <a href="research-projects-shktrk.html">
-        <img src="content/img/shktrk-bowshk1p3M4.opt.msh.rho.png" width="120px" alt="" title=""/><br/>
-        High-order shock tracking
+        <img src="content/img/sph_w_2_view1.png" width="200px" alt="" title=""/><br/>
+        High-order implicit shock tracking
       </a>
     </td>
     <td id="project-thumb">
@@ -63,23 +63,23 @@
       </a>
     </td>
     <td id="project-thumb">
-      <a href="research-projects-msrom.html">
-        <img src="content/img/msrom-micro0.png" width="180px" alt="" title=""/><br/>
-        Model reduction for multiscale problems
-      </a>
-    </td>
-  </tr>
-  <tr valign="bottom">
-    <td id="project-thumb">
       <a href="research-projects-trammo.html">
         <img src="content/img/trammo-crm_deformed.png" width="200px" alt="" title=""/><br/>
         PDE-constrained optimization using adaptive reduced-order models
       </a>
     </td>
+  </tr>
+  <tr valign="bottom">
+    <td id="project-thumb">
+      <a href="research-projects-msrom.html">
+        <img src="content/img/msrom-micro0.png" width="170px" alt="" title=""/><br/>
+        Model reduction for multiscale problems
+      </a>
+    </td>
     <td id="project-thumb">
       <a href="research-projects-locrom.html">
         <img src="content/img/locrom-ahmed-pres.png" width="200px" alt="" title=""/><br/>
-        Local model reduction
+        Model reduction methods
       </a>
     </td>
     <td id="project-thumb">
@@ -143,8 +143,40 @@
   </div>
 </div>
 -->
-          <h3>Model reduction with local reduced-order bases</h3>
-<p>A new approach for dimensionality reduction via projection of nonlinear computational models based on the concept of local reduced-order bases is presented. It is particularly suited for problems characterized by different physical regimes or parameter variations. The solution space is partitioned into subregions, and a local reduced-order basis is constructed and assigned to each subregion offline. During the online phase, a local basis is chosen according to the subregion of the solution space where the current high-dimensional solution lies. Low-rank SVD updates are used to efficiently inject online information into reduced-order bases defined offline.</p><br/>
+          <h3>Non-intrusive model reduction using deep learning</h3>
+<p>It is well-known that model reduction can only lead to CPU savings
+for general nonlinear systems if the system reduction is supplemented
+with an additional step, <i>hyperreduction</i>, to ensure nonlinear
+terms can be evaluated efficiently. Prevailing methods to approximate
+the nonlinear terms are code intrusive, potentially requiring years of
+development time to integrate into an existing codebase, and have been
+known to lack parametric robustness. We developed a non-intrusive method
+to efficiently and accurately approximate the expensive nonlinear terms
+that arise in reduced nonlinear dynamical system using deep neural networks.
+Once trained, the neural network-based reduced-order model only requires
+forward and backward propagation through the network to evaluate the nonlinear
+term and its derivative, which are used to integrate the reduced dynamical
+system at a new parameter configuration. As such, this method is less
+code-intrusive than popular hyperreduction approaches, and our numerical
+experiments also showed it tends to be more stable.</p>
+
+<h4>Journal papers</h4>
+<ul>
+  <li>
+  <p><a name="gao2020nonintrusive"></a>
+  
+  H.&nbsp;Gao, J.-X. Wang, and M.&nbsp;J. Zahr, &ldquo;Non-intrusive model reduction of
+    large-scale, nonlinear dynamical systems using deep learning,&rdquo; <em>Physica
+    D: Nonlinear Phenomena</em>, vol.&nbsp;412, p.&nbsp;132614, 2020.
+  [&nbsp;<a href="content/bib/gao2020nonintrusive_bib.html#gao2020nonintrusive">bib</a>&nbsp;| 
+  <a href="http://dx.doi.org/10.1016/j.physd.2020.132614">DOI</a>&nbsp;| 
+  <a href="https://arxiv.org/abs/1911.03808">arxiv</a>&nbsp;| 
+  <a href="https://linkinghub.elsevier.com/retrieve/pii/S0167278919305573">link</a>&nbsp;]
+  </p>  </li>
+</ul>
+
+<h3>Model reduction with local reduced-order bases</h3>
+<p>We developed a new approach for dimensionality reduction via projection of nonlinear computational models based on the concept of local reduced-order bases. It is particularly well-suited for problems characterized by different physical regimes or parameter variations. The solution space is partitioned into subregions, and a local reduced-order basis is constructed and assigned to each subregion offline. During the online phase, a local basis is chosen according to the subregion of the solution space where the current high-dimensional solution lies. Low-rank SVD updates are used to efficiently inject online information into reduced-order bases defined offline.</p><br/>
 
 <div class="imgdivcntr">
   <img src="content/img/locrom-contrived-hdm-rom.png" width="650px" alt="" title=""/>

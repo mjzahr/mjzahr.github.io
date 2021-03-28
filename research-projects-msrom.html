@@ -52,8 +52,8 @@
   <tr valign="bottom">
     <td id="project-thumb">
       <a href="research-projects-shktrk.html">
-        <img src="content/img/shktrk-bowshk1p3M4.opt.msh.rho.png" width="120px" alt="" title=""/><br/>
-        High-order shock tracking
+        <img src="content/img/sph_w_2_view1.png" width="200px" alt="" title=""/><br/>
+        High-order implicit shock tracking
       </a>
     </td>
     <td id="project-thumb">
@@ -63,23 +63,23 @@
       </a>
     </td>
     <td id="project-thumb">
-      <a href="research-projects-msrom.html">
-        <img src="content/img/msrom-micro0.png" width="180px" alt="" title=""/><br/>
-        Model reduction for multiscale problems
-      </a>
-    </td>
-  </tr>
-  <tr valign="bottom">
-    <td id="project-thumb">
       <a href="research-projects-trammo.html">
         <img src="content/img/trammo-crm_deformed.png" width="200px" alt="" title=""/><br/>
         PDE-constrained optimization using adaptive reduced-order models
       </a>
     </td>
+  </tr>
+  <tr valign="bottom">
+    <td id="project-thumb">
+      <a href="research-projects-msrom.html">
+        <img src="content/img/msrom-micro0.png" width="170px" alt="" title=""/><br/>
+        Model reduction for multiscale problems
+      </a>
+    </td>
     <td id="project-thumb">
       <a href="research-projects-locrom.html">
         <img src="content/img/locrom-ahmed-pres.png" width="200px" alt="" title=""/><br/>
-        Local model reduction
+        Model reduction methods
       </a>
     </td>
     <td id="project-thumb">
@@ -144,7 +144,7 @@
 </div>
 -->
           <h3>Model reduction for multiscale problems</h3>
-We developed a reduction/hyperreduction framework for dramatically accelerating the solution of nonlinear dynamic multiscale problems in structural and solid mechanics. At each scale, the dimensionality of the governing equations is reduced using the method of snapshots for proper orthogonal decomposition, and computational efficiency is achieved for the evaluation of the nonlinear reduced-order terms using a carefully designed configuration of the energy conserving sampling and weighting method. Information is efficiently transmitted between the scales without incurring high-dimensional operations. Training is performed in two steps: (1) a microscale hyper reduced-order model is constructed in situ, or using a mesh coarsening strategy, in order to achieve significant speedups even in non-parametric settings and (2) a classical offline–online training approach is performed to build a parametric hyper reduced-order macroscale model, which completes the construction of a fully hyper reduced-order parametric multiscale model capable of fast and accurate multiscale simulations. A notable feature of this computational framework is the minimization, at the macroscale level, of the cost of the offline training using the in situ or coarsely trained hyper reduced-order microscale model to accelerate snapshot acquisition. The effectiveness of the proposed hyper reduction framework at accelerating the solution of nonlinear dynamic multiscale problems is demonstrated for two problems in structural and solid mechanics. Speedup factors as high as five orders of magnitude are shown to be achievable.
+<p>We developed a reduction/hyperreduction framework for dramatically accelerating the solution of nonlinear dynamic multiscale problems in structural and solid mechanics. At each scale, the dimensionality of the governing equations is reduced using the method of snapshots for proper orthogonal decomposition, and computational efficiency is achieved for the evaluation of the nonlinear reduced-order terms using a carefully designed configuration of the Energy Conserving Sampling and Weighting (ECSW) method. Information is efficiently transmitted between the scales without incurring high-dimensional operations. Training is performed in two steps: (1) a microscale hyper reduced-order model is constructed in situ, or using a mesh coarsening strategy, in order to achieve significant speedups even in non-parametric settings and (2) a classical offline–online training approach is performed to build a parametric hyper reduced-order macroscale model, which completes the construction of a fully hyper reduced-order parametric multiscale model capable of fast and accurate multiscale simulations. A notable feature of this computational framework is the minimization, at the macroscale level, of the cost of the offline training using the in situ or coarsely trained hyper reduced-order microscale model to accelerate snapshot acquisition. The effectiveness of the proposed hyper reduction framework at accelerating the solution of nonlinear dynamic multiscale problems is demonstrated for two problems in structural and solid mechanics. Speedup factors as large as five orders of magnitude are shown to be achievable.</p>
 
 <div id="center">
  <div class="imgdivcntr">

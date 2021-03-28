@@ -79,6 +79,19 @@ table#tlayout {
   overflow: hidden;
 }
 
+#project-thumb-long {
+  padding-top: 0.5em;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: none;
+  width: 300vw;
+  background: white;
+  #background: transparent;
+  text-align: center;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
 #layout-menu {
 	background: #ffffff;
 	padding-top: 0.5em;

@@ -52,8 +52,8 @@
   <tr valign="bottom">
     <td id="project-thumb">
       <a href="research-projects-shktrk.html">
-        <img src="content/img/shktrk-bowshk1p3M4.opt.msh.rho.png" width="120px" alt="" title=""/><br/>
-        High-order shock tracking
+        <img src="content/img/sph_w_2_view1.png" width="200px" alt="" title=""/><br/>
+        High-order implicit shock tracking
       </a>
     </td>
     <td id="project-thumb">
@@ -63,23 +63,23 @@
       </a>
     </td>
     <td id="project-thumb">
-      <a href="research-projects-msrom.html">
-        <img src="content/img/msrom-micro0.png" width="180px" alt="" title=""/><br/>
-        Model reduction for multiscale problems
-      </a>
-    </td>
-  </tr>
-  <tr valign="bottom">
-    <td id="project-thumb">
       <a href="research-projects-trammo.html">
         <img src="content/img/trammo-crm_deformed.png" width="200px" alt="" title=""/><br/>
         PDE-constrained optimization using adaptive reduced-order models
       </a>
     </td>
+  </tr>
+  <tr valign="bottom">
+    <td id="project-thumb">
+      <a href="research-projects-msrom.html">
+        <img src="content/img/msrom-micro0.png" width="170px" alt="" title=""/><br/>
+        Model reduction for multiscale problems
+      </a>
+    </td>
     <td id="project-thumb">
       <a href="research-projects-locrom.html">
         <img src="content/img/locrom-ahmed-pres.png" width="200px" alt="" title=""/><br/>
-        Local model reduction
+        Model reduction methods
       </a>
     </td>
     <td id="project-thumb">
@@ -144,7 +144,7 @@
 </div>
 -->
           <h3>Time-dependent PDE-constrained optimization with high order methods</h3>
-<p>Optimization problems constrained by time-dependent Partial Differential Equations (PDEs) commonly arise in engineering practice, particularly in the context of design or control of physics-based systems. We developed and demonstrated a framework for time-dependent PDE-constrained optimization of conservation laws on deforming domains. High-order methods, in both space (discontinuous Galerkin) and time (Runge-Kutta), are used to compute output functionals to high accuracy. The fully-discrete sensitivity and adjoint equations were derived and implemented, where special attention was required to properly differentiate the Geometric Conservation Law (GCL) treatment. Applications include optimal control and shape optimization of fluid systems governed by the Navier-Stokes equations.</p>
+<p>Optimization problems constrained by time-dependent Partial Differential Equations (PDEs) commonly arise in engineering practice, particularly in the context of design or control of physics-based systems. We developed and demonstrated a framework for time-dependent PDE-constrained optimization of conservation laws on deforming domains. High-order methods, in both space (discontinuous Galerkin) and time (Runge-Kutta), are used to compute output functionals to high accuracy. The fully discrete sensitivity and adjoint equations were derived and implemented, where special attention was required to properly differentiate the Geometric Conservation Law (GCL) treatment. Applications include optimal control and shape optimization of fluid systems governed by the Navier-Stokes equations.</p>
 
 <div id="center">
  <div class="imgdivcntr">
@@ -174,7 +174,7 @@
 </div>
 
 <h4>Time-periodicity constraints</h4>
-<p>Cyclic steady-state motion of a system, i.e., stable time-periodic behavior, is of central importance in bio-locomotion and many brnches of engineering. Examples includef alpping flight, swimming at low or high Reynolds number, helicopter aerodynamics, turbomachinery, wind turbines, and vehicle tires with treads. In this work, we propose a framework for optimizing partial differential equations using gradient-based method <i>on the manifold of time-periodic solutions</i>. We use a Newton-Krylov shooting method with matrix-free GMRES to determine time-periodic flows. We derived and implemented the adjoint equations and method corresponding to the fully discrete, time-periodically constrained PDE. The adjoint equations are linear, two-point boundary value problems that are provably solvable and we propose a matrix-free GMRES solver, where matrix-vector products are computed with standard adjoint solves.
+<p>Cyclic steady-state motion of a system, i.e., stable time-periodic behavior, is of central importance in bio-locomotion and many branches of engineering. Examples includef flapping flight, swimming at low or high Reynolds number, helicopter aerodynamics, turbomachinery, wind turbines, and vehicle tires with treads. In this work, we developed a framework for optimizing partial differential equations using gradient-based method <i>on the manifold of time-periodic solutions</i>. We use a Newton-Krylov shooting method with matrix-free GMRES to determine time-periodic flows. We derived and implemented the adjoint equations and method corresponding to the fully discrete, time-periodically constrained PDE. The adjoint equations are linear, two-point boundary value problems that are provably solvable for which we developed a matrix-free GMRES solver with matrix-vector products computed by standard adjoint solves.
 
 <div id="center">
  <div class="imgdivcntr">
@@ -204,7 +204,7 @@
 </div>
 
 <h4>Application: Superresolution of MR images via PDE-constrained optimization</h4>
-<p>In collaboration with an MRI research group in Sweden, we have used our time-dependent PDE-constrained optimization methods to superresolved Magnetic Resonsance Images (MRIs). This is a canonical data assimilation problem where we augment our numerical simulations with data to determine inflow appropriate inflow conditions, which is cast as an optimization problem where we minimize the misfit with the data based on a parametrization of the inflow.</p>
+<p>In collaboration with an MRI research group in Sweden, we have used our time-dependent PDE-constrained optimization methods to superresolve Magnetic Resonsance Images (MRIs), an approach we call Simulation-Based Imaging (SBI). This is a canonical data assimilation problem where we augment our numerical simulations with data to determine appropriate inflow/outflow conditions, which is cast as an optimization problem where we minimize the misfit with the data based on a parametrization of the inflow/outflow velocities.</p>
 
 <div id="center">
  <div class="imgdivcntr">
@@ -229,16 +229,20 @@
  </div>
 </div>
 
+<div id="center">
+ <div class="imgdivcntr">
+  <img src="content/img/brain3d-geom.png" width="250px" alt="" title=""/>
+  <img src="content/img/brain3d-voxvel.png" width="250px" alt="" title=""/>
+  <img src="content/img/brain3d-vel.png" width="250px" alt="" title=""/>
+  <p>Patient-specific mesh of brain vessel network (Circle of Willis)
+     (<i>left</i>), MRI voxel velocity data on 2D spatial
+     slice at time instance (<i>middle</i>), and SBI reconstruction
+     (<i>right</i>).</p>
+ </div>
+</div>
+
 <h4>Book chapters</h4>
 <ul>
-  <li>
-  <p><a name="shi2021hoist"></a>
-  
-  A.&nbsp;Shi, P.-O. Persson, and M.&nbsp;J. Zahr, &ldquo;High-order implicit shock tracking
-    (HOIST),&rdquo; in <em>SEMA-SIMA, In Honor of Oubay Hassan's 60th Birthday</em>,
-    Springer, 2021.
-  [&nbsp;<a href="content/bib/shi2021hoist_bib.html#shi2021hoist">bib</a>&nbsp;]
-  </p>  </li>
   <li>
   <p><a name="zahr2018flapopt"></a>
   

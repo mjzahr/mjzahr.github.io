@@ -52,8 +52,8 @@
   <tr valign="bottom">
     <td id="project-thumb">
       <a href="research-projects-shktrk.html">
-        <img src="content/img/shktrk-bowshk1p3M4.opt.msh.rho.png" width="120px" alt="" title=""/><br/>
-        High-order shock tracking
+        <img src="content/img/sph_w_2_view1.png" width="200px" alt="" title=""/><br/>
+        High-order implicit shock tracking
       </a>
     </td>
     <td id="project-thumb">
@@ -63,23 +63,23 @@
       </a>
     </td>
     <td id="project-thumb">
-      <a href="research-projects-msrom.html">
-        <img src="content/img/msrom-micro0.png" width="180px" alt="" title=""/><br/>
-        Model reduction for multiscale problems
-      </a>
-    </td>
-  </tr>
-  <tr valign="bottom">
-    <td id="project-thumb">
       <a href="research-projects-trammo.html">
         <img src="content/img/trammo-crm_deformed.png" width="200px" alt="" title=""/><br/>
         PDE-constrained optimization using adaptive reduced-order models
       </a>
     </td>
+  </tr>
+  <tr valign="bottom">
+    <td id="project-thumb">
+      <a href="research-projects-msrom.html">
+        <img src="content/img/msrom-micro0.png" width="170px" alt="" title=""/><br/>
+        Model reduction for multiscale problems
+      </a>
+    </td>
     <td id="project-thumb">
       <a href="research-projects-locrom.html">
         <img src="content/img/locrom-ahmed-pres.png" width="200px" alt="" title=""/><br/>
-        Local model reduction
+        Model reduction methods
       </a>
     </td>
     <td id="project-thumb">
@@ -143,56 +143,124 @@
   </div>
 </div>
 -->
-          <h3>PDE-constrained optimization using adaptive reduced-order models</h3>
-An adaptive approach to using reduced-order models as surrogates in PDE-constrained optimization is introduced that breaks the traditional offline-online framework of model order reduction. A sequence of optimization problems constrained by a given Reduced-Order Model (ROM) is defined with the goal of converging to the solution of a given PDE-constrained optimization problem. For each reduced optimization problem, the constraining ROM is trained from sampling the High-Dimensional Model (HDM) at the solution of previous problems in the sequence. The reduced optimization problems are equipped with a nonlinear trust-region based on a residual error indicator to keep the optimization trajectory in a region of the parameter space where the ROM is accurate.
-
+          <h3>Accelerated PDE-constrained optimization using adaptive reduced-order models</h3>
+<p>An adaptive approach to using reduced-order models as surrogates in PDE-constrained optimization is introduced that breaks the traditional offline-online framework of model order reduction. A sequence of optimization problems constrained by a given projection-based reduced-order model (ROM) is defined with the goal of converging to the solution of a PDE-constrained optimization problem. For each reduced optimization problem, the constraining ROM is trained from sampling the High-Dimensional Model (HDM) at the solution along the optimization trajectory. The reduced optimization problems are equipped with a trust-region (TR) to keep the optimization trajectory in a region of the parameter space where the ROM is accurate and to guarantee global convergence.</p>
 <div id="center">
  <div class="imgdivcntr">
   <div class="imgdivcntr">
-   <img src="content/img/trammo-adapt-schematic.png" width="350px" alt="" title=""/><br/><br/>
-   <img src="content/img/trammo-adapt-timeline.png" width="350px" alt="" title=""/>
+   <img src="content/img/trammo-adapt-schematic.png" width="375px" alt="" title=""/><br/><br/>
+   <img src="content/img/trammo-adapt-timeline.png" width="375px" alt="" title=""/>
   </div>
-  <img src="content/img/trammo-adapt-muspace.png" width="240px" alt="" title=""/>
+  <img src="content/img/trammo-adapt-muspace.png" width="265px" alt="" title=""/>
  <p>Adaptive model reduction framework for PDE-constrained optimization
     globalized with trust regions. <i>Top left</i>: Flow chart,
     <i>bottom left</i>: breakdown of computational time, and <i>right</i>:
-    parameter space.</p>
+    parameter space schematic (red circles: TR centers; gray regions: TR; blue star: optimal solution).</p>
  </div>
 </div>
 
 <div id="center">
  <div class="imgdivcntr">
-  <img src="content/img/trammo-naca-opt.png" width="200px" alt="" title=""/>
-  <img src="content/img/trammo-cp-shape-cmpr.png" width="220px" alt="" title=""/>
-  <img src="content/img/trammo-naca-hdmobj-vs-romobj.png" width="220px" alt="" title=""/>
- <p>Aerodynamic shape optimization with ROM optimization framework: 2D
-    airfoil. <i>Left</i>: optimal/target configuration (RAE2822),
+  <img src="content/img/trammo-naca-opt.png" width="225px" alt="" title=""/>
+  <img src="content/img/trammo-cp-shape-cmpr.png" width="250px" alt="" title=""/>
+  <img src="content/img/trammo-naca-hdmobj-vs-romobj.png" width="250px" alt="" title=""/>
+ <p>Aerodynamic shape optimization with ROM optimization framework.
+    <i>Left</i>: optimal/target configuration (RAE2822),
     <i>center</i>: shape and pressure coefficient distribution,
     and <i>right</i>: convergence history.</p>
  </div>
 </div>
 
-A methodology is proposed for incorporating reduced-order models in a nonlinear topology optimization framework, which reduces the time required to obtain a topologically optimal structural design. The approach constructs two low-dimensional bases: one to reduce the dimension of the structural displacements and governing equations, and one to reduce the dimension of the parameter space, i.e. element volume fractions. The displacement basis is constructed adaptively during the reduced optimization problem to ensure accuracy is maintained along the optimization trajectory. The parameter basis is constructed apriori by lumping elements into macro-elements. As the reduced optimal solution will not coincide with the optimal topology, in general, the reduced optimal solution is used to warm-start a standard topology optimization method. Compared to a popular topology optimization method, without reduction or warm-starting, the proposed method achieves an order of magnitude speedup when applied to compliance minimization of a 2D cantilever and 3D trestle.
+<h3>Accelerated topology optimization using adaptive reduced-order models</h3>
+<p>Building on the above method, we developed a globally convergent method to accelerate density-based topology optimization using projection-based ROMs and trust-region methods. The large-scale finite element simulation, which dominates the computational cost, is replaced with a sequence of ROMs that reduce the cost of objective function and gradient evaluations by orders of magnitude. To guarantee convergence, we first introduce a trust-region method that employs generalized trust-region constraints and prove it is globally convergent. Using this trust-region method, we introduce a class of globally convergent ROM-accelerated topology optimization methods using a posteriori error estimation theory for ROMs. This leads to trust-region methods that construct and update the ROM on-the-fly during optimization; the methods are guaranteed to converge to a critical point of the original, unreduced topology optimization problem, regardless of starting point. The method has been shown to reduce the cost of topology optimization by up to an order of magnitude relative to standard methods.</p>
 
 <div id="center">
  <div class="imgdivcntr">
-<img src="content/img/trammo-cantilever-hdm-opt.png" width="210px" alt="" title=""/>
-<img src="content/img/trammo-cantilever-rom-opt.png" width="210px" alt="" title=""/>
-<img src="content/img/trammo-cantilever-hdm-intermed.png" width="210px" alt="" title=""/>
- <p>2D cantilever: compliance minimization. <i>Left</i>: optimal solution,
-    <i>center</i>: solution using ROM framework (N seconds),
-    <i>right</i>: olution using HDM after N seconds.</p>
+  <img src="content/img/cbeam0_hdmviz_nel160x100_rmin2_iter2000.png" width="250px" alt="" title=""/>
+  <img src="content/img/mbb0_hdmviz_nel180x60_rmin0p12_iter2000.png" width="250px" alt="" title=""/>
+  <img src="content/img/ssbeam0_hdmviz_nel180x90_rmin0p5_iter2000.png" width="250px" alt="" title=""/>
+ <p>Optimal design of a cantilever (<i>left</i>), MBB beam (<i>middle</i>),
+    and simply supported beam (<i>right</i>).</p>
  </div>
 </div>
 
 <div id="center">
  <div class="imgdivcntr">
-<img src="content/img/trammo-trestle-hdm-opt.png" width="210px" alt="" title=""/>
-<img src="content/img/trammo-trestle-rom-opt.png" width="210px" alt="" title=""/>
-<img src="content/img/trammo-trestle-hdm-intermed.png" width="210px" alt="" title=""/>
- <p>3D trestle: compliance minimization. <i>Left</i>: optimal solution,
-    <i>center</i>: solution using ROM framework (N seconds),
-    <i>right</i>: solution using HDM after N seconds.</p>
+  <div class="imgdivcntr">
+   <img src="content/img/ssbeam0_hdmviz_nel180x90_rmin0p5_iter006_matinterp1.png" width="300px" alt="" title=""/>
+   <img src="content/img/ssbeam0_trromviz_nel180x90_rmin0p5_rescon_r0frac0p1_iter006_matinterp1.png" width="300px" alt="" title=""/>
+  </div> <br/>
+  <div class="imgdivcntr">
+   <img src="content/img/ssbeam0_hdmviz_nel180x90_rmin0p5_iter010_matinterp1.png" width="300px" alt="" title=""/>
+   <img src="content/img/ssbeam0_trromviz_nel180x90_rmin0p5_rescon_r0frac0p1_iter010_matinterp1.png" width="300px" alt="" title=""/>
+  </div> <br/>
+  <div class="imgdivcntr">
+   <img src="content/img/ssbeam0_hdmviz_nel180x90_rmin0p5_iter014_matinterp1.png" width="300px" alt="" title=""/>
+   <img src="content/img/ssbeam0_trromviz_nel180x90_rmin0p5_rescon_r0frac0p1_iter014_matinterp1.png" width="300px" alt="" title=""/>
+  </div> <br/>
+  <div class="imgdivcntr">
+   <img src="content/img/ssbeam0_hdmviz_nel180x90_rmin0p5_iter030_matinterp1.png" width="300px" alt="" title=""/>
+   <img src="content/img/ssbeam0_trromviz_nel180x90_rmin0p5_rescon_r0frac0p1_iter030_matinterp1.png" width="300px" alt="" title=""/>
+  </div>
+ <p>Optimal design of simply supported beam using MMA (<i>left</i>) and
+    the ROM/TR method (<i>right</i>) at major iterations (<i>top-to-bottom</i>):
+    6, 10, 14, 30. The ROM/TR method is effectively converged at iteration
+    14 whereas the MMA approach still contains non-optimal features at iteration
+    30.</p>
+ </div>
+</div>
+
+<h3>Accelerated PDE-constrained optimization under uncertainty using adaptive ROMs and sparse grids</h3>
+<p>Building on the above work, we developed a new method to efficiently solve
+optimization problems constrained by PDEs with uncertain coefficients. The
+method leverages two sources of inexactness that trade accuracy for speed:
+(1) stochastic collocation based on dimension-adaptive sparse grids (SGs),
+which approximates the stochastic objective function with a limited number
+of quadrature nodes, and (2) projection-based ROMs, which generate efficient
+approximations to PDE solutions. These two sources of inexactness lead to
+inexact objective function and gradient evaluations, which are managed by
+a trust-region method that guarantees global convergence by adaptively
+refining the sparse grid and reduced-order model until a proposed error
+indicator drops below a tolerance specified by trust-region convergence theory.
+A key feature of the proposed method is that the error indicator, which
+accounts for errors incurred by both the sparse grid and reduced-order
+model, must be only an asymptotic error bound, i.e., a bound that holds
+up to an arbitrary constant that need not be computed. This enables the
+method to be applicable to a wide range of problems, including those where
+sharp, computable error bounds are not available. The method has been
+shown to be orders of magnitude more efficient than standard approaches.</p>
+
+<div id="center">
+ <div class="imgdivcntr">
+  <img src="content/tikz/bckstp_stochopt.png" width="750px" alt="" title=""/>
+ <p>Optimal stochastic control of flow over backward facing step to minimize
+    vorticity in the recirculation region (uncertain inflow, boundary control
+    on face of step): uncontrolled mean flow (<i>left</i>) and optimal mean
+    flow (<i>right</i>).</p>
+ </div>
+</div>
+
+<div id="center">
+ <div class="imgdivcntr">
+  <img src="content/tikz/romopt_aniso_iog_sg.png" width="750px" alt="" title=""/>
+ <p>The SG index set (<i>top</i>) and corresponding quadrature nodes
+    (<i>bottom</i>) at various trust-region iterations (black indicates
+    members of the current sparse grid and red are members of the forward
+    neighbors used for error estimation). Initially there are very few
+    quadrature nodes; only near convergence are the quadrature nodes
+    (automatically) refined to ensure convergence.</p>
+ </div>
+</div>
+
+<div id="center">
+ <div class="imgdivcntr">
+  <img src="content/tikz/stochopt_rom_obj_v_cost.png" width="750px" alt="" title=""/>
+ <p>Convergence of the objective function (<i>left</i>) and gradient
+    (<i>right</i>) as a function of the cost for: a standard method
+    that uses a fine quadrature rule and only HDM solves (red),
+    adaptive sparse grid and only HDM solves (blue square),
+    and the new SG/ROM method (black triangle).</p>
+ </p>
  </div>
 </div>
 
@@ -218,6 +286,7 @@ A methodology is proposed for incorporating reduced-order models in a nonlinear 
     no.&nbsp;3, pp.&nbsp;877--912, 2019.
   [&nbsp;<a href="content/bib/zahr2019adaptive_bib.html#zahr2019adaptive">bib</a>&nbsp;| 
   <a href="http://dx.doi.org/10.1137/18M1220996">DOI</a>&nbsp;| 
+  <a href="https://arxiv.org/abs/1811.00177">arxiv</a>&nbsp;| 
   <a href="https://epubs.siam.org/doi/10.1137/18M1220996">link</a>&nbsp;]
   </p>  </li>
   <li>
@@ -687,6 +756,31 @@ A methodology is proposed for incorporating reduced-order models in a nonlinear 
   <a href="content/posters/zahr2013usnccm-poster.pdf">poster</a>&nbsp;]
   </p>  </li>
 </ul>
+
+<!--
+A methodology is proposed for incorporating reduced-order models in a nonlinear topology optimization framework, which reduces the time required to obtain a topologically optimal structural design. The approach constructs two low-dimensional bases: one to reduce the dimension of the structural displacements and governing equations, and one to reduce the dimension of the parameter space, i.e. element volume fractions. The displacement basis is constructed adaptively during the reduced optimization problem to ensure accuracy is maintained along the optimization trajectory. The parameter basis is constructed apriori by lumping elements into macro-elements. As the reduced optimal solution will not coincide with the optimal topology, in general, the reduced optimal solution is used to warm-start a standard topology optimization method. Compared to a popular topology optimization method, without reduction or warm-starting, the proposed method achieves an order of magnitude speedup when applied to compliance minimization of a 2D cantilever and 3D trestle.
+<div id="center">
+ <div class="imgdivcntr">
+<img src="content/img/trammo-cantilever-hdm-opt.png" width="210px" alt="" title=""/>
+<img src="content/img/trammo-cantilever-rom-opt.png" width="210px" alt="" title=""/>
+<img src="content/img/trammo-cantilever-hdm-intermed.png" width="210px" alt="" title=""/>
+ <p>2D cantilever: compliance minimization. <i>Left</i>: optimal solution,
+    <i>center</i>: solution using ROM framework (N seconds),
+    <i>right</i>: olution using HDM after N seconds.</p>
+ </div>
+</div>
+
+<div id="center">
+ <div class="imgdivcntr">
+<img src="content/img/trammo-trestle-hdm-opt.png" width="210px" alt="" title=""/>
+<img src="content/img/trammo-trestle-rom-opt.png" width="210px" alt="" title=""/>
+<img src="content/img/trammo-trestle-hdm-intermed.png" width="210px" alt="" title=""/>
+ <p>3D trestle: compliance minimization. <i>Left</i>: optimal solution,
+    <i>center</i>: solution using ROM framework (N seconds),
+    <i>right</i>: solution using HDM after N seconds.</p>
+ </div>
+</div>
+-->
         </td>
       </tr>
     </table>
