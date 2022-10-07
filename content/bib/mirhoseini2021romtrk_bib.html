@@ -7,17 +7,22 @@
 </pre>
 
 <a name="mirhoseini2021romtrk"></a><pre>
-@inproceedings{<a href="mirhoseini2021romtrk.html#mirhoseini2021romtrk">mirhoseini2021romtrk</a>,
-  abstract = {This work presents a high-order accurate, nonlinearly stable numerical framework for solving steady conservation laws with discontinuous solution features such as shock waves. The method falls into the category of a shock tracking or r-adaptive method and is based on the observation that numerical discretizations such as finite volume or discontinuous Galerkin methods that support discontinuities along element faces can perfectly repre- sent discontinuities and provide appropriate stabilization through approximate Riemann solvers. The difficulty lies in aligning element faces with the unknown discontinuity. The proposed method recasts a discretized conservation law as a PDE-constrained optimization problem whose solution is a (curved) mesh that tracks the discontinuity and the solution of the discrete conservation law on this mesh. The discrete state vector and nodal positions of the high-order mesh are taken as optimization variables. The objective function is a dis- continuity indicator that monotonically approaches a minimum as element faces approach the shock surface in a neighborhood of radius O(h), where h is the mesh size parameter. The discretized conservation law on a parametrized domain defines the equality constraints for the optimization problem. A full space optimization solver is used to simultaneously converge the state vector and mesh to their optimal values. This ensures the solution of the discrete PDE is never required on meshes that are not aligned with discontinuities and it increases the nonlinear stability. The method is demonstrated in one and two dimensions: transonic flow through a nozzle and supersonic flow around a bluff body. In both cases, the framework tracks the discontinuity closely with curved mesh elements and provides accurate solutions on extremely coarse meshes, e.g., O(1000) degrees of freedom to resolve supersonic flow at Mach 4 in two dimensions.},
-  address = {Washington, D.C.},
+@article{<a href="mirhoseini2021romtrk.html#mirhoseini2021romtrk">mirhoseini2021romtrk</a>,
+  abstract = {A novel framework for resolving discontinuous solutions of conservation laws, e.g., contact lines, shock waves, and interfaces, using implicit tracking and a high-order discontinuous Galerkin (DG) discretization was introduced in [38]. Central to the framework is an optimization problem whose solution is a discontinuity-aligned mesh and the corresponding high-order approximation to the flow that does not require explicit meshing of the unknown discontinuity surface. The method was shown to deliver highly accurate solutions on coarse, high-order discretizations without nonlinear stabilization and recover optimal convergence rates even for problems with discontinuous solutions. This work extends the implicit tracking framework such that robustness is improved and convergence accelerated. In particular, we introduce an improved formulation of the central optimization problem and an associated sequential quadratic programming (SQP) solver. The new error-based objective function penalizes violation of the DG residual in an enriched test space and is shown to have excellent tracking properties. The SQP solver simultaneously converges the nodal coordinates of the mesh and DG solution to their optimal values and is equipped with a number of features to ensure robust, fast convergence: Levenberg-Marquardt approximation of the Hessian with weighted elliptic regularization, backtracking line search, and rigorous convergence criteria. We use the proposed method to solve a range of inviscid conservation laws of varying difficulty. We show the method is able to deliver accurate solutions on coarse, high-order meshes and the SQP solver is robust and usually able to drive the first-order optimality system to tight tolerances.},
+  arxiv = {<a href="https://arxiv.org/abs/2109.14694">https://arxiv.org/abs/2109.14694</a>},
   author = {Mirhoseini, Marzieh and Zahr, Matthew J.},
-  booktitle = {Proc. of the AIAA Aviation Forum and Exposition (Aviation 2021)},
-  date-added = {2020-12-04 18:37:45 -0500},
-  date-modified = {2020-12-04 18:38:59 -0500},
-  organization = {American Institute of Aeronautics and Astronautics},
-  project = {rom},
-  title = {An optimization approach to solve parametrized conservation laws based on reduced order models},
-  year = {6/7/2021 -- 6/11/2021}
+  contribution = {conceptualization, formal analysis, methodology, software, writing - original/review/edit (MJZ); investigation (MM)},
+  corauthor = {Zahr, Matthew J.},
+  date-added = {2021-07-27 15:35:47 -0400},
+  date-modified = {2021-10-27 21:13:24 -0400},
+  doi = {TBD},
+  journal = {Journal of Computational Physics},
+  month = {in review},
+  project = {shktrk, rom},
+  title = {Model reduction of convection-dominated partial differential equations via optimization-based implicit feature tracking},
+  year = {2021},
+  bdsk-url-1 = {<a href="http://www.sciencedirect.com/science/article/pii/S002199911830189X">http://www.sciencedirect.com/science/article/pii/S002199911830189X</a>},
+  bdsk-url-2 = {https://doi.org/10.1016/j.jcp.2018.03.029}
 }
 </pre>
 
