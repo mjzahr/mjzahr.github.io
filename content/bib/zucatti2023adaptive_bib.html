@@ -8,14 +8,13 @@
 
 <a name="zucatti2023adaptive"></a><pre>
 @article{<a href="zucatti2023adaptive.html#zucatti2023adaptive">zucatti2023adaptive</a>,
-  abstract = {A recently developed high-order implicit shock tracking (HOIST) framework for resolving discontinuous solutions of inviscid, steady conservation laws [43], [45] is extended to the unsteady case. Central to the framework is an optimization problem which simultaneously computes a discontinuity-aligned mesh and the corresponding high-order approximation to the flow, which provides nonlinear stabilization and a high-order approximation to the solution. This work extends the implicit shock tracking framework to the case of unsteady conservation laws using a method of lines discretization via a diagonally implicit Runge-Kutta method by ``solving a steady problem at each timestep''. We formulate and solve an optimization problem that produces a feature-aligned mesh and solution at each Runge-Kutta stage of each timestep, and advance this solution in time by standard Runge-Kutta update formulas. A Rankine-Hugoniot based prediction of the shock location together with a high-order, untangling mesh smoothing procedure provides a high-quality initial guess for the optimization problem at each time, which results in rapid convergence of the sequential quadratic programing (SQP) optimization solver. This method is shown to deliver highly accurate solutions on coarse, high-order discretizations without nonlinear stabilization and recover the design accuracy of the Runge-Kutta scheme. We demonstrate this framework on a series of inviscid, unsteady conservation laws in both one- and two- dimensions. We also verify that our method is able to recover the design order of accuracy of our time integrator in the presence of a strong discontinuity.},
-  arxiv = {<a href="TBD">TBD</a>},
+  arxiv = {<a href="https://arxiv.org/pdf/2301.01718.pdf">https://arxiv.org/pdf/2301.01718.pdf</a>},
   author = {Zucatti, Victor and Zahr, Matthew J.},
   contribution = {investigation, software (VZ); conceptualization, methodology, writing - original/review/edit (VZ, MJZ)},
   corauthor = {Zahr, Matthew J.},
   date-added = {2022-12-23 22:16:37 -0500},
-  date-modified = {2022-12-23 22:33:12 -0500},
-  journal = {Journal of Computational Physics},
+  date-modified = {2023-07-26 05:50:16 -0600},
+  journal = {International Journal for Numerical Methods in Fluids},
   month = {in review},
   project = {rom},
   title = {An adaptive, training-free reduced-order model for convection-dominated problems based on hybrid snapshots},
